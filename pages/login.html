@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'poppins';
+            background-color: #00B96B;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-box {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .login-box img {
+            max-width: 13pc;
+        }
+
+        .login-box h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group p {
+            text-align: left;
+            color: white;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 22px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .input-group input[type="email"] {
+            padding-left: 40px;
+            background-image: url('../images/email.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.5rem;
+        }
+
+        .input-group input[type="password"] {
+            padding-left: 40px;
+            background-image: url('../images/Vector.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 0.8rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .remember-me a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .remember-me a:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            background-color: #0067E4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 22px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+
+        }
+
+        .google-btn button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 22px;
+            border: 1px solid #fff;
+            outline: none;
+            background-image: url('../images/google.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1rem;
+            font-weight: 600;
+            margin-top: 30px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .facebook-btn button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 22px;
+            margin-top: 20px;
+            border: 1px solid #fff;
+            outline: none;
+            background-image: url('../images/facebook.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.2rem;
+            font-weight: 600;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .apple-btn button {
+            background-color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 22px;
+            margin-top: 20px;
+            border: 1px solid white;
+            outline: none;
+            background-image: url('../images/apple.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .signup-txt {
+            color: white;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .signup-txt a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .signup-txt a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .login-box {
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 250px) {
+            .login-box img {
+                max-width: 9pc;
+            }
+
+            .remember-me {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .login-box {
+                width: 90%;
+            }
+
+        }
+
+
+        .section {
+            background-color: white;
+            padding: 30px 100px 0px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .section {
+                padding: 20px 50px 0px;
+            }
+
+        }
+
+        .inner-section {
+            display: flex;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 1088px) {
+            .inner-section {
+                flex-direction: column;
+            }
+
+        }
+
+
+        .link {
+            color: black;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .button button {
+            padding: 20px 30px;
+            background-color: #FFB400;
+            color: black;
+            font-weight: 600;
+            border: none;
+            border-radius: 36px;
+            cursor: pointer;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: 80%;
+        }
+
+
+       
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div class="login-box">
+                <img src="../images/new-logo 1.png" alt="logo">
+                <h2>Welcome Back</h2>
+                <div class="input-group">
+                    <p>Email</p>
+                    <input type="email" placeholder="email@shopnate.com">
+                </div>
+                <div class="input-group">
+                    <p>Password</p>
+                    <input type="password" placeholder="*********">
+                </div>
+                <div class="remember-me">
+                    <div>
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#">Forget password</a>
+                </div>
+                <button class="login-btn">Login</button>
+
+                <div class="signup-txt">
+                    <p>Don't have an account? <a href="#">Register Now</a></p>
+                </div>
+
+                <div class="google-btn">
+                    <button>Login with Google</button>
+                </div>
+                <div class="facebook-btn">
+                    <button>Login with Facebook</button>
+                </div>
+                <div class="apple-btn">
+                    <button>Login with Apple</button>
+                </div>
+                <div class="signup-txt">
+                    <p>Want to Join? <a href="#">Find a Cause to Support</a></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <h1>Not a Shopnate shopper yet?Join free today!</h1>
+            <p>Collect <a class="link" href="#">Free Donations</a> for the cause you care about from the retailers every
+                time you shop online. Donations don't cost you any extra!</p>
+            <div class="inner-section">
+                <div class="button">
+                    <button>RAISE DONATION FOR YOUR CAUSE</button>
+                </div>
+                <div class="image">
+                    <img src="../images/Group 12.png" alt="Placeholder Image">
+                </div>
+            </div>
+        </div>
+        <div id="footerContainer"></div>
+
+    </div>
+</body>
+<script>
+     fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+</script>
+</html>

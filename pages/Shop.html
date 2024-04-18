@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>How it works</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        main {
+            font-family: 'Poppins';
+        }
+
+        .container {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('../images/Mask group (6).png');
+            background-size: cover;
+            padding: 0 20px;
+        }
+
+        .container p {
+            font-size: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #FFB700;
+            max-width: 80%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .firstsection {
+            background-color: white;
+            padding: 40px 60px;
+        }
+
+        .text-section p {
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container p {
+                font-size: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        .category-section-container {
+            display: flex;
+        }
+
+        .shop-toggle-cat {
+            list-style: none;
+            padding: 0;
+        }
+
+        .shop-toggle-cat li {
+            margin-bottom: 5px;
+
+        }
+
+        .shop-toggle-cat li:hover {
+            background-color: white;
+            padding: 2px;
+            border-radius: 22px;
+        }
+
+        .shop-toggle-cat a {
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .category-section {
+            background-color: #FFB700;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .a-z-category {
+            width: 80%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 10px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .modal-grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 10px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .modal-grid-container>div {
+            border: 1px solid #E6E6E6;
+            border-radius: 12px;
+            text-align: center;
+            padding: 30px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-container>div {
+            border: 1px solid #E6E6E6;
+            border-radius: 12px;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .modal-grid-item:hover {
+            background-color: #FFB700;
+        }
+
+        .grid-item:hover {
+            background-color: #FFB700;
+        }
+
+        .left-section h3 {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container p {
+                font-size: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .category-section-container {
+                flex-direction: column;
+            }
+
+            .left-section,
+            .a-z-category {
+                width: 100%;
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .modal-grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .grid-item {
+                font-size: 20px;
+                padding: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 567px) {
+            .container p {
+                font-size: 16px;
+            }
+
+            .grid-item {
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .container p {
+                font-size: 14px;
+            }
+
+            .grid-item {
+                font-size: 14px;
+                padding: 5px;
+            }
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #FFB700;
+            position: absolute;
+            top: 10px;
+            /* Adjust this value to position it vertically */
+            right: 10px;
+            /* Adjust this value to position it horizontally */
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal__close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #585858;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="container">
+
+            <p>Shop at over 688 retailers</p>
+        </div>
+        <div class="firstsection">
+            <div class="text-section">
+                <p>Raising donations when you shop online is super easy! At Shopnate, you'll find big-name retailers
+                    like Amazon, Nike, Asos, Bobby Brown, eBay, Expedia.com, and Etihad Airways. They're all ready to
+                    donate to the cause of your choice, every time you shop.</p>
+            </div>
+            <div class="category-section-container">
+                <div class="left-section">
+                    <h3>Categories</h3>
+                    <div class="category-section">
+
+                        <ul class="shop-toggle-cat">
+                            <li><a href="./Category-Shop.html">Alcohol</a></li>
+                            <li><a href="category-shop/4">Arts & Crafts</a></li>
+                            <li><a href="category-shop/42">Baby</a></li>
+                            <li><a href="category-shop/5">Baby & Parents</a></li>
+                            <li><a href="category-shop/67">Beauty</a></li>
+                            <li><a href="category-shop/55">Books</a></li>
+                            <li><a href="category-shop/6">Books & Magazines</a></li>
+                            <li><a href="category-shop/57">Business</a></li>
+                            <li><a href="category-shop/7">Cars</a></li>
+                            <li><a href="category-shop/8">Computers</a></li>
+                            <li><a href="category-shop/39">Costume</a></li>
+                            <li><a href="category-shop/9">Deals & Freebies</a></li>
+                            <li><a href="category-shop/33">Department Store</a></li>
+                            <li><a href="category-shop/10">Education</a></li>
+                            <li><a href="category-shop/46">Electrical</a></li>
+                            <li><a href="category-shop/11">Electronics</a></li>
+                            <li><a href="category-shop/12">Fashion</a></li>
+                            <li><a href="category-shop/32">Flights</a></li>
+                            <li><a href="category-shop/13">Flowers</a></li>
+                            <li><a href="category-shop/14">Food & Drink</a></li>
+                            <li><a href="category-shop/49">Furniture</a></li>
+                            <li><a href="category-shop/53">Gadgets</a></li>
+                            <li><a href="category-shop/51">Games</a></li>
+                            <li><a href="category-shop/15">Games, DVDs & Videos</a></li>
+                            <li><a href="category-shop/16">Gifts & Presents</a></li>
+                            <li><a href="category-shop/59">Halloween</a></li>
+                            <li><a href="category-shop/17">Health & Beauty</a></li>
+                            <li><a href="category-shop/36">Hire Car</a></li>
+                            <li><a href="category-shop/18">Home & Garden</a></li>
+                            <li><a href="category-shop/35">Hotels</a></li>
+                            <li><a href="category-shop/19">Insurance & Finance</a></li>
+                            <li><a href="category-shop/43">Jewellery</a></li>
+                            <li><a href="category-shop/20">Jewellery & Watches</a></li>
+                            <li><a href="category-shop/21">Kids</a></li>
+                            <li><a href="category-shop/54">Kitchen</a></li>
+                            <li><a href="category-shop/22">Mobile Phones</a></li>
+                            <li><a href="category-shop/73">Mother</a></li>
+                            <li><a href="category-shop/52">Movies</a></li>
+                            <li><a href="category-shop/23">Music</a></li>
+                            <li><a href="category-shop/40">New Zealand</a></li>
+                            <li><a href="category-shop/56">Office</a></li>
+                            <li><a href="category-shop/24">Office & Business</a></li>
+                            <li><a href="category-shop/50">Outdoors</a></li>
+                            <li><a href="category-shop/25">Pets</a></li>
+                            <li><a href="category-shop/34">Pharmacy</a></li>
+                            <li><a href="category-shop/37">Rental</a></li>
+                            <li><a href="category-shop/48">School</a></li>
+                            <li><a href="category-shop/47">Software</a></li>
+                            <li><a href="category-shop/26">Sports</a></li>
+                            <li><a href="category-shop/27">Toys</a></li>
+                            <li><a href="category-shop/28">Travel</a></li>
+                            <li><a href="category-shop/29">Utilities</a></li>
+                            <li><a href="category-shop/72">Valentine</a></li>
+                            <li><a href="category-shop/31">Wine</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="a-z-category left-section">
+                    <h3>Retailer A-Z</h3>
+                    <div class="grid-container">
+
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+
+    const gridContainer = document.querySelector('.grid-container');
+
+    // Function to open modal with relevant content
+    function openModal(content) {
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+        const modalContent = modal.querySelector('.modal-content');
+        modalContent.innerHTML = content;
+    }
+
+    const letterContent = {
+        A: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">A4C</div>
+            <div class="modal-grid-item">Adairs</div>
+            <div class="modal-grid-item">Adore Beauty</div>
+            <div class="modal-grid-item">Adore Beauty</div>
+            <div class="modal-grid-item">Adore Beauty Pty Ltd</div>
+            <div class="modal-grid-item">Adventure Tours Australia</div>
+            <div class="modal-grid-item">Agoda</div>
+            <div class="modal-grid-item">AHAlife.com</div>
+            <div class="modal-grid-item">Airbnb Host</div>
+            <div class="modal-grid-item">Aje.</div>
+            <div class="modal-grid-item">Alamy AU</div>
+            <div class="modal-grid-item">Alamy UK</div>
+            <div class="modal-grid-item">Alibris UK: books, movies & music</div>
+            <div class="modal-grid-item">Alibris: Books, Music, & Movies</div>
+            <div class="modal-grid-item">alice McCALL</div>
+            <div class="modal-grid-item">AliExpress</div>
+            <div class="modal-grid-item">Ally Fashion</div>
+            <div class="modal-grid-item">Ally Fashion Australia</div>
+            <div class="modal-grid-item">AM Eyewear</div>
+            <div class="modal-grid-item">Amara AU</div>
+            <div class="modal-grid-item">amaysim</div>
+            <div class="modal-grid-item">Amazon Australia</div>
+            <div class="modal-grid-item">Amcal</div>
+            <div class="modal-grid-item">American Swiss</div>
+            <div class="modal-grid-item">Anaconda</div>
+            <div class="modal-grid-item">Ancestry</div>
+            <div class="modal-grid-item">Ancestry</div>
+            <div class="modal-grid-item">Anthropologie (FR)</div>
+            <div class="modal-grid-item">Anytime Costumes</div>
+            <div class="modal-grid-item">Appliances Online Australia</div>
+            <div class="modal-grid-item">ASOS (AU)</div>
+            <div class="modal-grid-item">Aspire Charity Gaming</div>
+            <div class="modal-grid-item">Audible (Paused)</div>
+            <div class="modal-grid-item">Austin Reed</div>
+            <div class="modal-grid-item">Australian NaturalCare</div>
+            <div class="modal-grid-item">Autograph</div>
+            <div class="modal-grid-item">Aveda</div>
+            <div class="modal-grid-item">Avis Australia</div>
+            <div class="modal-grid-item">Avis Australia</div>
+            <div class="modal-grid-item">Ax Paris</div>
+        </div>
+    `,
+
+        B: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">B2C Jewels</div>
+            <div class="modal-grid-item">Baby Bunting</div>
+            <div class="modal-grid-item">Bally AU</div>
+            <div class="modal-grid-item">Bardot/Bardot Junior</div>
+            <div class="modal-grid-item">BCF</div>
+            <div class="modal-grid-item">BE ME</div>
+            <div class="modal-grid-item">Bed Bath N Table</div>
+            <div class="modal-grid-item">Beddinginn</div>
+            <div class="modal-grid-item">Bedrosians Tile & Stone</div>
+            <div class="modal-grid-item">Beginning Boutique</div>
+            <div class="modal-grid-item">Bellabox</div>
+            <div class="modal-grid-item">bellabox</div>
+            <div class="modal-grid-item">Bendon Lingerie</div>
+            <div class="modal-grid-item">Berlei</div>
+            <div class="modal-grid-item">Berlei</div>
+            <div class="modal-grid-item">Betta Home Living</div>
+            <div class="modal-grid-item">Betta Home Living</div>
+            <div class="modal-grid-item">BH Cosmetics</div>
+            <div class="modal-grid-item">Birthday in a Box</div>
+            <div class="modal-grid-item">Biscuiteers Baking Company</div>
+            <div class="modal-grid-item">Blackmores</div>
+            <div class="modal-grid-item">Bloomingdales Australia</div>
+            <div class="modal-grid-item">Blue Dog Posters</div>
+            <div class="modal-grid-item">Blue Nile</div>
+            <div class="modal-grid-item">Blue Nile</div>
+            <div class="modal-grid-item">Bluebella</div>
+            <div class="modal-grid-item">BNKR (AU)</div>
+            <div class="modal-grid-item">BNKR (AU)</div>
+            <div class="modal-grid-item">Bobbi Brown Australia</div>
+            <div class="modal-grid-item">Bockers & Pony</div>
+            <div class="modal-grid-item">Boden</div>
+            <div class="modal-grid-item">Boden AU</div>
+            <div class="modal-grid-item">Bonds</div>
+            <div class="modal-grid-item">Booktopia</div>
+            <div class="modal-grid-item">Boohoo</div>
+            <div class="modal-grid-item">Boohoo.com</div>
+            <div class="modal-grid-item">BoozeBud</div>
+            <div class="modal-grid-item">Bravado Designs</div>
+            <div class="modal-grid-item">Breville</div>
+            <div class="modal-grid-item">BridgeClimb Sydney</div>
+            <div class="modal-grid-item">Bright Star Kids</div>
+            <div class="modal-grid-item">Brooks Brothers</div>
+            <div class="modal-grid-item">Brosa Furniture</div>
+            <div class="modal-grid-item">Bupa Optical</div>
+            <div class="modal-grid-item">BWS</div>
+            <div class="modal-grid-item">BWS</div>
+            <div class="modal-grid-item">BWS</div>
+            <div class="modal-grid-item">By Charlotte</div>
+        </div>
+    `,
+        C: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Canningvale</div>
+            <div class="modal-grid-item">Carlos by Carlos Santana</div>
+            <div class="modal-grid-item">CAT Footwear (UK) Wolverine Europe Retail Ltd</div>
+            <div class="modal-grid-item">Cath Kidston (UK)</div>
+            <div class="modal-grid-item">CD Universe</div>
+            <div class="modal-grid-item">Cellarmasters</div>
+            <div class="modal-grid-item">Cengage Learning Australia</div>
+            <div class="modal-grid-item">Chain Reaction Cycles Australia</div>
+            <div class="modal-grid-item">Champion Australia</div>
+            <div class="modal-grid-item">Charles Tyrwhitt Shirts Ltd (AU)</div>
+            <div class="modal-grid-item">Chow Sang Sang</div>
+            <div class="modal-grid-item">City Beach</div>
+            <div class="modal-grid-item">City Beach</div>
+            <div class="modal-grid-item">City Chic (Speciality Fashion Group)</div>
+            <div class="modal-grid-item">City Chic New Zealand</div>
+            <div class="modal-grid-item">Clinique</div>
+            <div class="modal-grid-item">Coles Online</div>
+            <div class="modal-grid-item">Connor Pty Ltd</div>
+            <div class="modal-grid-item">Convict Bitters</div>
+            <div class="modal-grid-item">Costume Discounters</div>
+            <div class="modal-grid-item">Costume SuperCenter</div>
+            <div class="modal-grid-item">Costume SuperCentre Canada</div>
+            <div class="modal-grid-item">Cotton On (AU)</div>
+            <div class="modal-grid-item">Country Road / Trenery Outlet</div>
+            <div class="modal-grid-item">Cover-More Travel Insurance</div>
+            <div class="modal-grid-item">Cover-More Travel Insurance - Australia</div>
+            <div class="modal-grid-item">Crabtree AU</div>
+            <div class="modal-grid-item">Crazy Sales</div>
+            <div class="modal-grid-item">Crazy Shirts</div>
+            <div class="modal-grid-item">CrazySales</div>
+            <div class="modal-grid-item">Crocs Australia</div>
+            <div class="modal-grid-item">Crossroads</div>
+            <div class="modal-grid-item">Curtain Wonderland</div>
+            <div class="modal-grid-item">Cycling Express</div>
+        </div>
+    `,
+
+        D: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Dan Murphys</div>
+            <div class="modal-grid-item">Dan Murphys</div>
+            <div class="modal-grid-item">David Jones</div>
+            <div class="modal-grid-item">David Lawrence</div>
+            <div class="modal-grid-item">Deaf Lottery</div>
+            <div class="modal-grid-item">Deaf Lottery</div>
+            <div class="modal-grid-item">DealsDirect</div>
+            <div class="modal-grid-item">Dell</div>
+            <div class="modal-grid-item">Depositphotos</div>
+            <div class="modal-grid-item">Design By Humans</div>
+            <div class="modal-grid-item">Dick Smith Electronics</div>
+            <div class="modal-grid-item">Dr. Scholl's Shoes</div>
+            <div class="modal-grid-item">DriveNow Australia</div>
+            <div class="modal-grid-item">Due to a recent unfair sales tax law</div>
+            <div class="modal-grid-item">Dusk</div>
+            <div class="modal-grid-item">DWI (Digital World International)</div>
+        </div>
+    `,
+
+        E: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">EAMART</div>
+            <div class="modal-grid-item">Easirent</div>
+            <div class="modal-grid-item">Eastdane AU/APAC</div>
+            <div class="modal-grid-item">easy2name</div>
+            <div class="modal-grid-item">EasyClickTravel.com</div>
+            <div class="modal-grid-item">EasyRentCars.com</div>
+            <div class="modal-grid-item">eBay</div>
+            <div class="modal-grid-item">eBay Germany</div>
+            <div class="modal-grid-item">Ecco Shoes Pacific</div>
+            <div class="modal-grid-item">Edible Blooms</div>
+            <div class="modal-grid-item">Electro Antiperspirant - MIN $100 PER ORDER</div>
+            <div class="modal-grid-item">EMPHASIS</div>
+            <div class="modal-grid-item">Endota Spa AU</div>
+            <div class="modal-grid-item">Ernest Jones</div>
+            <div class="modal-grid-item">Estee Lauder</div>
+            <div class="modal-grid-item">Estee Lauder</div>
+            <div class="modal-grid-item">Estro</div>
+            <div class="modal-grid-item">Etihad Airways</div>
+            <div class="modal-grid-item">ettitude AU</div>
+            <div class="modal-grid-item">Everbuying.net</div>
+            <div class="modal-grid-item">Every Mountain</div>
+            <div class="modal-grid-item">EveryPlate</div>
+            <div class="modal-grid-item">Expansys</div>
+            <div class="modal-grid-item">Expedia</div>
+        </div>
+    `,
+
+        F: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Factorie</div>
+            <div class="modal-grid-item">Fame & Partners AU</div>
+            <div class="modal-grid-item">Famous Footwear</div>
+            <div class="modal-grid-item">Fangear</div>
+            <div class="modal-grid-item">Fantastic Furniture</div>
+            <div class="modal-grid-item">Fast Cover Travel Insurance Australia</div>
+            <div class="modal-grid-item">Feelunique (AU)</div>
+            <div class="modal-grid-item">First Choice Liquor</div>
+            <div class="modal-grid-item">First Choice Liquor</div>
+            <div class="modal-grid-item">First Choice Liquor</div>
+            <div class="modal-grid-item">First Vintage Limited</div>
+            <div class="modal-grid-item">Flora2000</div>
+            <div class="modal-grid-item">Florsheim (AU)</div>
+            <div class="modal-grid-item">Flower.com Flowers</div>
+            <div class="modal-grid-item">Food St AU</div>
+            <div class="modal-grid-item">Foot Locker AU</div>
+            <div class="modal-grid-item">Forever New Clothing Pty Ltd</div>
+            <div class="modal-grid-item">FORZIERI AU/ASIA-PACIFIC</div>
+            <div class="modal-grid-item">FORZIERI.COM</div>
+            <div class="modal-grid-item">Fossil</div>
+            <div class="modal-grid-item">FragranceNet.com</div>
+            <div class="modal-grid-item">Freedom</div>
+            <div class="modal-grid-item">French Connection</div>
+            <div class="modal-grid-item">Fresh Fragrances and Cosmetics</div>
+            <div class="modal-grid-item">From The Box Office</div>
+        </div>
+    `,
+
+        G: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">G Adventures Australia</div>
+            <div class="modal-grid-item">Gemjoli</div>
+            <div class="modal-grid-item">General Pants</div>
+            <div class="modal-grid-item">General Pants</div>
+            <div class="modal-grid-item">Get The Label</div>
+            <div class="modal-grid-item">Gift a Restaurant</div>
+            <div class="modal-grid-item">Giuseppe Zanotti APAC</div>
+            <div class="modal-grid-item">Glassesshop.com, Inc.</div>
+            <div class="modal-grid-item">Glue Store</div>
+            <div class="modal-grid-item">GolfEtail.com</div>
+            <div class="modal-grid-item">Good Sam Roadside Assistance</div>
+            <div class="modal-grid-item">Good Sam Travel Assist</div>
+            <div class="modal-grid-item">GotStock</div>
+            <div class="modal-grid-item">Grays Online</div>
+            <div class="modal-grid-item">GUESS AU</div>
+        </div>
+    `,
+        H: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">H Samuel</div>
+            <div class="modal-grid-item">Hamilton Island</div>
+            <div class="modal-grid-item">Happy Socks AU</div>
+            <div class="modal-grid-item">Hard Yakka</div>
+            <div class="modal-grid-item">Hard Yakka Australia</div>
+            <div class="modal-grid-item">hardtofind.com.au</div>
+            <div class="modal-grid-item">Harvey Nichols AU/APAC</div>
+            <div class="modal-grid-item">Havaianas</div>
+            <div class="modal-grid-item">HealthPost Limited</div>
+            <div class="modal-grid-item">HeatAndCool.com</div>
+            <div class="modal-grid-item">Heidi Klein</div>
+            <div class="modal-grid-item">HelloFresh</div>
+            <div class="modal-grid-item">Helloworld.com.au</div>
+            <div class="modal-grid-item">HerbsPro</div>
+            <div class="modal-grid-item">Hobbs Ltd</div>
+            <div class="modal-grid-item">Hold Me Tight</div>
+            <div class="modal-grid-item">Holiday Cars (APAC)</div>
+            <div class="modal-grid-item">Hostel World</div>
+            <div class="modal-grid-item">Hotelopia (Closing 3rd July)</div>
+            <div class="modal-grid-item">Hotels.com</div>
+            <div class="modal-grid-item">HotelsCombined</div>
+            <div class="modal-grid-item">House</div>
+            <div class="modal-grid-item">House Of CB</div>
+            <div class="modal-grid-item">HP Australia</div>
+        </div>
+    `,
+        I: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">iceonline.com.au</div>
+            <div class="modal-grid-item">IK Multimedia</div>
+            <div class="modal-grid-item">iMomoko.com</div>
+            <div class="modal-grid-item">Innovations</div>
+            <div class="modal-grid-item">Instarem</div>
+            <div class="modal-grid-item">InsureandGo</div>
+            <div class="modal-grid-item">Interweave</div>
+            <div class="modal-grid-item">Intrepid Travel AU</div>
+            <div class="modal-grid-item">Iolo technologies, LLC</div>
+            <div class="modal-grid-item">iSUBSCRiBE</div>
+            <div class="modal-grid-item">Italist</div>
+            <div class="modal-grid-item">Italist Inc. AU/ASIA-PACIFIC</div>
+            <div class="modal-grid-item">iTunes</div>
+            <div class="modal-grid-item">iVentureCard</div>
+        </div>
+    `,
+        J: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">JAG</div>
+            <div class="modal-grid-item">JBL Australia</div>
+            <div class="modal-grid-item">JD Lighting</div>
+            <div class="modal-grid-item">JD Sports Australia</div>
+            <div class="modal-grid-item">Jeanswest</div>
+            <div class="modal-grid-item">Jeanswest AU</div>
+            <div class="modal-grid-item">Jeff Banks AU</div>
+            <div class="modal-grid-item">John Hardy</div>
+            <div class="modal-grid-item">John Smedley</div>
+            <div class="modal-grid-item">Johnny Bigg AU</div>
+            <div class="modal-grid-item">JuiceBeauty.com</div>
+            <div class="modal-grid-item">Jurlique AU</div>
+            <div class="modal-grid-item">Just Mobile SIM Cards</div>
+            <div class="modal-grid-item">Just Wines Australia</div>
+        </div>
+    `,
+        K: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Kathmandu</div>
+            <div class="modal-grid-item">Kathmandu Pty Ltd</div>
+            <div class="modal-grid-item">Katies</div>
+            <div class="modal-grid-item">Kellyhoppen.com</div>
+            <div class="modal-grid-item">kikki.K</div>
+            <div class="modal-grid-item">King Gee</div>
+            <div class="modal-grid-item">Kissed Earth</div>
+            <div class="modal-grid-item">Klook Travel</div>
+            <div class="modal-grid-item">Kogan.com</div>
+            <div class="modal-grid-item">Kurt Geiger</div>
+            <div class="modal-grid-item">Kurt Geiger Ltd.</div>
+        </div>
+    `,
+        L: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Lanolips AU</div>
+            <div class="modal-grid-item">Last Minute Travel</div>
+            <div class="modal-grid-item">Lastminute.com.au</div>
+            <div class="modal-grid-item">LEGO SYSTEM AU</div>
+            <div class="modal-grid-item">Lenovo Australia</div>
+            <div class="modal-grid-item">LifeStride</div>
+            <div class="modal-grid-item">LightsupOnline AU</div>
+            <div class="modal-grid-item">Liquorland</div>
+            <div class="modal-grid-item">Little Party Dress</div>
+            <div class="modal-grid-item">Lola Rose</div>
+            <div class="modal-grid-item">Long Tall Sally</div>
+            <div class="modal-grid-item">Long Tall Sally AU</div>
+            <div class="modal-grid-item">Lorna Jane AU-NZ-EU</div>
+            <div class="modal-grid-item">Lust Have It!</div>
+            <div class="modal-grid-item">Luxo Living</div>
+            <div class="modal-grid-item">Lyres AU</div>
+        </div>
+    `,
+        M: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">MAC Cosmetics Australia</div>
+            <div class="modal-grid-item">Macys AU/Asia Pacific</div>
+            <div class="modal-grid-item">Mainline Menswear</div>
+            <div class="modal-grid-item">Mainline Menswear Australia</div>
+            <div class="modal-grid-item">Malaysia Airlines</div>
+            <div class="modal-grid-item">Mamaway</div>
+            <div class="modal-grid-item">Marcs</div>
+            <div class="modal-grid-item">Marks & Spencer</div>
+            <div class="modal-grid-item">Marks & Spencer</div>
+            <div class="modal-grid-item">Marks & Spencer</div>
+            <div class="modal-grid-item">Marks & Spencer NZ</div>
+            <div class="modal-grid-item">Marks and Spencers - US</div>
+            <div class="modal-grid-item">Marley Spoon</div>
+            <div class="modal-grid-item">Matchbox</div>
+            <div class="modal-grid-item">Mate Internet and Mobile</div>
+            <div class="modal-grid-item">Matt & Nat</div>
+            <div class="modal-grid-item">McAfee APAC</div>
+            <div class="modal-grid-item">Menulog AU</div>
+            <div class="modal-grid-item">Menulog Australia</div>
+            <div class="modal-grid-item">Merrell (UK) Wolverine Europe Retail Ltd</div>
+            <div class="modal-grid-item">MetalPressions.com</div>
+            <div class="modal-grid-item">Microsoft</div>
+            <div class="modal-grid-item">Microsoft AU</div>
+            <div class="modal-grid-item">Microsoft NZ</div>
+            <div class="modal-grid-item">Millers</div>
+            <div class="modal-grid-item">Mint Accessories</div>
+            <div class="modal-grid-item">Mirenesse</div>
+            <div class="modal-grid-item">Miss Holly</div>
+            <div class="modal-grid-item">Mobileciti</div>
+            <div class="modal-grid-item">ModelCo</div>
+            <div class="modal-grid-item">Mossimo</div>
+            <div class="modal-grid-item">Mountain Warehouse - AUS</div>
+            <div class="modal-grid-item">MyBeautySpot</div>
+            <div class="modal-grid-item">MyHouse Australia</div>
+            <div class="modal-grid-item">MYSALE GROUP (OzSale)</div>
+        </div>
+    `,
+
+        N: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">NastyGal (AU)</div>
+            <div class="modal-grid-item">Natural Life AU</div>
+            <div class="modal-grid-item">Naturalizer</div>
+            <div class="modal-grid-item">New Balance AU</div>
+            <div class="modal-grid-item">Nike Asia Pacific</div>
+            <div class="modal-grid-item">Nike AU</div>
+            <div class="modal-grid-item">Nine West</div>
+            <div class="modal-grid-item">Nisbets</div>
+            <div class="modal-grid-item">Noni B Limited</div>
+            <div class="modal-grid-item">Nookie AU</div>
+            <div class="modal-grid-item">NORDSTROM.com</div>
+        </div>
+    `,
+        O: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Oasis Fashions Ltd (US)</div>
+            <div class="modal-grid-item">Oasis Fashions Ltd (AU)</div>
+            <div class="modal-grid-item">Office Corporate</div>
+            <div class="modal-grid-item">Ole Henriksen</div>
+            <div class="modal-grid-item">Omorovicza</div>
+            <div class="modal-grid-item">Omorovicza Cosmetics Inc</div>
+            <div class="modal-grid-item">onsport.com.au</div>
+            <div class="modal-grid-item">OO.com.au</div>
+            <div class="modal-grid-item">Origin PC</div>
+            <div class="modal-grid-item">Orlebar Brown</div>
+            <div class="modal-grid-item">Oroton</div>
+            <div class="modal-grid-item">Orvis UK</div>
+            <div class="modal-grid-item">Ovo Australia</div>
+            <div class="modal-grid-item">Ovolo Hotels</div>
+            <div class="modal-grid-item">Oxfam Shop</div>
+        </div>
+    `,
+        P: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">P.E Nation</div>
+            <div class="modal-grid-item">PandaHall</div>
+            <div class="modal-grid-item">ParlourX</div>
+            <div class="modal-grid-item">Paul Fredrick MenStyle</div>
+            <div class="modal-grid-item">Pearson Education (InformIT)</div>
+            <div class="modal-grid-item">Pen Heaven</div>
+            <div class="modal-grid-item">People Tree</div>
+            <div class="modal-grid-item">Peregrine Adventures AU</div>
+            <div class="modal-grid-item">Perfume.com</div>
+            <div class="modal-grid-item">Petal & Pup AU</div>
+            <div class="modal-grid-item">Petals Network</div>
+            <div class="modal-grid-item">Petbarn</div>
+            <div class="modal-grid-item">PETstock</div>
+            <div class="modal-grid-item">PETstock</div>
+            <div class="modal-grid-item">Photobook Worldwide Sdn Bhd (AU)</div>
+            <div class="modal-grid-item">Photobook Worldwide Sdn Bhd (UK)</div>
+            <div class="modal-grid-item">Photobook Worldwide Sdn Bhd (US)</div>
+            <div class="modal-grid-item">Pillow Talk</div>
+            <div class="modal-grid-item">Pillow Talk</div>
+            <div class="modal-grid-item">Poncho Insurance</div>
+            <div class="modal-grid-item">Powertec</div>
+            <div class="modal-grid-item">Pretty Little Thing AU</div>
+            <div class="modal-grid-item">Priceline</div>
+            <div class="modal-grid-item">Priceline</div>
+            <div class="modal-grid-item">Princess Trade</div>
+            <div class="modal-grid-item">PureVPN</div>
+        </div>
+    `,
+        Q: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Qatar Airways</div>
+            <div class="modal-grid-item">QEEQ.COM</div>
+            <div class="modal-grid-item">Quiksilver Women</div>
+            <div class="modal-grid-item">Quiz Clothing</div>
+        </div>
+    `,
+        R: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">R.M.Williams</div>
+            <div class="modal-grid-item">Rakuten Global Market</div>
+            <div class="modal-grid-item">Rakuten Kobo Australia</div>
+            <div class="modal-grid-item">Rakuten Kobo Canada</div>
+            <div class="modal-grid-item">Rakuten Kobo Europe</div>
+            <div class="modal-grid-item">Rakuten Kobo UK</div>
+            <div class="modal-grid-item">Rakuten Marketing Welcome Program</div>
+            <div class="modal-grid-item">Rakuten.es</div>
+            <div class="modal-grid-item">Rebecca Minkoff AU/Asia Pacific</div>
+            <div class="modal-grid-item">Rebecca Minkoff US</div>
+            <div class="modal-grid-item">Rebecca Vallance</div>
+            <div class="modal-grid-item">Rebel Sport & Amart Sports</div>
+            <div class="modal-grid-item">RedBalloon</div>
+            <div class="modal-grid-item">Reebonz</div>
+            <div class="modal-grid-item">Reebonz AU/APAC</div>
+            <div class="modal-grid-item">Reiss</div>
+            <div class="modal-grid-item">REISS LTD</div>
+            <div class="modal-grid-item">Remedy Drinks</div>
+            <div class="modal-grid-item">Rental Cover</div>
+            <div class="modal-grid-item">Review</div>
+            <div class="modal-grid-item">Rivers</div>
+            <div class="modal-grid-item">Roborock AU</div>
+            <div class="modal-grid-item">Rockmans</div>
+            <div class="modal-grid-item">Rockwear</div>
+            <div class="modal-grid-item">Rodd & Gunn AU</div>
+            <div class="modal-grid-item">Roland Mouret</div>
+            <div class="modal-grid-item">Rollas Jeans APAC</div>
+            <div class="modal-grid-item">Royal Canadian Mint</div>
+            <div class="modal-grid-item">RSL Art Union</div>
+            <div class="modal-grid-item">RSL Art Union</div>
+            <div class="modal-grid-item">Rusty</div>
+            <div class="modal-grid-item">Ry.com.au Pty Ltd</div>
+        </div>
+    `,
+        S: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Sa Sa Dot Com Cosmetics</div>
+            <div class="modal-grid-item">SABA Australia</div>
+            <div class="modal-grid-item">Saks 5th Avenue AU/Asia Pacific</div>
+            <div class="modal-grid-item">Sanity</div>
+            <div class="modal-grid-item">Sass & Bide Australia</div>
+            <div class="modal-grid-item">Saucony (UK) Wolverine Europe Retail Ltd</div>
+            <div class="modal-grid-item">Sea World Resort</div>
+            <div class="modal-grid-item">Seafolly</div>
+            <div class="modal-grid-item">Sennheiser AU</div>
+            <div class="modal-grid-item">Sephora</div>
+            <div class="modal-grid-item">Sharper Image</div>
+            <div class="modal-grid-item">Sheertex AU</div>
+            <div class="modal-grid-item">SHEIN</div>
+            <div class="modal-grid-item">Sheridan</div>
+            <div class="modal-grid-item">Sheridan Outlet</div>
+            <div class="modal-grid-item">ShoeSales.com.au</div>
+            <div class="modal-grid-item">Shopbop</div>
+            <div class="modal-grid-item">Shopbop</div>
+            <div class="modal-grid-item">Shopbop AU/APAC</div>
+            <div class="modal-grid-item">Shoptiques</div>
+            <div class="modal-grid-item">Showbag Shop</div>
+            <div class="modal-grid-item">Simply Wholesale</div>
+            <div class="modal-grid-item">Simply Wholesale</div>
+            <div class="modal-grid-item">Site Lock</div>
+            <div class="modal-grid-item">Sixt Car Rental</div>
+            <div class="modal-grid-item">Smartbuyglasses Optical Limited</div>
+            <div class="modal-grid-item">Smashbox UK</div>
+            <div class="modal-grid-item">Smiffy's</div>
+            <div class="modal-grid-item">Smiffys</div>
+            <div class="modal-grid-item">Snapfish</div>
+            <div class="modal-grid-item">Social Check</div>
+            <div class="modal-grid-item">Soho Skin Management</div>
+            <div class="modal-grid-item">Sol Sana</div>
+            <div class="modal-grid-item">Sony</div>
+            <div class="modal-grid-item">Sony</div>
+            <div class="modal-grid-item">Sony</div>
+            <div class="modal-grid-item">Specsavers Contact Lenses</div>
+            <div class="modal-grid-item">Sportitude</div>
+            <div class="modal-grid-item">SPORTSCRAFT Australia</div>
+            <div class="modal-grid-item">Spotlight Australia</div>
+            <div class="modal-grid-item">St Frock AU</div>
+            <div class="modal-grid-item">STA Travel AU</div>
+            <div class="modal-grid-item">STA Travel NZ</div>
+            <div class="modal-grid-item">Steelcase</div>
+            <div class="modal-grid-item">Stelly</div>
+            <div class="modal-grid-item">Steves Blinds and Wallpaper</div>
+            <div class="modal-grid-item">Strawberry Net</div>
+            <div class="modal-grid-item">Strawberry Net</div>
+            <div class="modal-grid-item">Stuart Weitzman</div>
+            <div class="modal-grid-item">StubHub APAC</div>
+            <div class="modal-grid-item">Student Discount Card – ISIC</div>
+            <div class="modal-grid-item">STYLEBOP.com AU/Asia Pacific</div>
+            <div class="modal-grid-item">Sunburn Swimwear</div>
+            <div class="modal-grid-item">Sunspel</div>
+            <div class="modal-grid-item">Sunuva</div>
+            <div class="modal-grid-item">Superdry</div>
+            <div class="modal-grid-item">Superga AU</div>
+            <div class="modal-grid-item">Supps R Us</div>
+            <div class="modal-grid-item">Supre</div>
+            <div class="modal-grid-item">SurfStitch</div>
+            <div class="modal-grid-item">SurfStitch</div>
+            <div class="modal-grid-item">Surfstitch AU</div>
+            <div class="modal-grid-item">Surfstitch NZ</div>
+            <div class="modal-grid-item">Sussan</div>
+            <div class="modal-grid-item">Swann Communications AU</div>
+            <div class="modal-grid-item">Szul.com</div>
+        </div>
+    `,
+
+        T: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Tackle Direct</div>
+            <div class="modal-grid-item">Target</div>
+            <div class="modal-grid-item">Target Australia</div>
+            <div class="modal-grid-item">Tarocash</div>
+            <div class="modal-grid-item">TaxFox</div>
+            <div class="modal-grid-item">Tbdress</div>
+            <div class="modal-grid-item">TecoBuy</div>
+            <div class="modal-grid-item">TeleChoice</div>
+            <div class="modal-grid-item">Tellnet</div>
+            <div class="modal-grid-item">The Adventure Challenge AU</div>
+            <div class="modal-grid-item">The Body Shop</div>
+            <div class="modal-grid-item">The Body Shop AU</div>
+            <div class="modal-grid-item">The Collagen Co.</div>
+            <div class="modal-grid-item">The Flower Factory</div>
+            <div class="modal-grid-item">THE ICONIC</div>
+            <div class="modal-grid-item">THE ICONIC</div>
+            <div class="modal-grid-item">The New Trend</div>
+            <div class="modal-grid-item">The New York Times Store</div>
+            <div class="modal-grid-item">The Nile NZ</div>
+            <div class="modal-grid-item">Thought</div>
+            <div class="modal-grid-item">Thrifty (Closing July 3rd)</div>
+            <div class="modal-grid-item">Ticketmaster Australia</div>
+            <div class="modal-grid-item">Ticketnetwork.com</div>
+            <div class="modal-grid-item">Tidebuy International</div>
+            <div class="modal-grid-item">Tomtop</div>
+            <div class="modal-grid-item">Tontine</div>
+            <div class="modal-grid-item">Tony Bianco</div>
+            <div class="modal-grid-item">TopBuy</div>
+            <div class="modal-grid-item">Topps</div>
+            <div class="modal-grid-item">Tractive</div>
+            <div class="modal-grid-item">Travel Insurance Direct</div>
+            <div class="modal-grid-item">Trend Micro</div>
+            <div class="modal-grid-item">Tru Organic LP</div>
+            <div class="modal-grid-item">Tuchuzy</div>
+            <div class="modal-grid-item">Two Blossom Lane</div>
+        </div>
+    `,
+        U: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Uber</div>
+            <div class="modal-grid-item">Uber Driver</div>
+            <div class="modal-grid-item">Uber Eats</div>
+            <div class="modal-grid-item">Uber Eats Driver</div>
+            <div class="modal-grid-item">UNICEF</div>
+            <div class="modal-grid-item">UP Home Loans</div>
+        </div>
+    `,
+        V: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">VenueKings.com</div>
+            <div class="modal-grid-item">VetShopAustralia</div>
+            <div class="modal-grid-item">Viagogo</div>
+            <div class="modal-grid-item">Vintage Cellars</div>
+            <div class="modal-grid-item">Virgin Wines (AU)</div>
+            <div class="modal-grid-item">Vistaprint AU/NZ/SG</div>
+            <div class="modal-grid-item">Vitality4Life</div>
+        </div>
+    `,
+        W: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">W Lane</div>
+            <div class="modal-grid-item">Walmart eBooks by Rakuten Kobo</div>
+            <div class="modal-grid-item">Webjet Car Hire</div>
+            <div class="modal-grid-item">Weight Watchers</div>
+            <div class="modal-grid-item">Wholesale Party Supplies and Halloween Costumes</div>
+            <div class="modal-grid-item">Wiggle</div>
+            <div class="modal-grid-item">Wigsbuy.com</div>
+            <div class="modal-grid-item">Winc Australia</div>
+            <div class="modal-grid-item">Wine People</div>
+            <div class="modal-grid-item">Wine Selectors</div>
+            <div class="modal-grid-item">WineMarket</div>
+            <div class="modal-grid-item">Wireless 1</div>
+            <div class="modal-grid-item">Wolf & Badger US</div>
+            <div class="modal-grid-item">WONDERSHARE TECHNOLOGY CO., LIMITED</div>
+            <div class="modal-grid-item">Woolworths Groceries</div>
+            <div class="modal-grid-item">Woolworths Insurance</div>
+            <div class="modal-grid-item">Woolworths Insurance (Paused)</div>
+            <div class="modal-grid-item">Woolworths Supermarkets</div>
+            <div class="modal-grid-item">Woolworths Supermarkets</div>
+            <div class="modal-grid-item">Woolworths Supermarkets</div>
+            <div class="modal-grid-item">WOTIF</div>
+            <div class="modal-grid-item">WOW Sight & Sound</div>
+        </div>
+    `,
+        X: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">No Shop</div>
+        </div>
+    `,
+        Y: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Yardgames</div>
+            <div class="modal-grid-item">Yatango</div>
+            <div class="modal-grid-item">yd.</div>
+            <div class="modal-grid-item">Yomojo</div>
+            <div class="modal-grid-item">YOOX Asia Limited</div>
+            <div class="modal-grid-item">You + All</div>
+            <div class="modal-grid-item">youi.com.au</div>
+        </div>
+    `,
+        Z: `
+        <div class="modal-grid-container">
+            <div class="modal-grid-item">Zodee</div>
+        </div>
+    `,
+
+    };
+
+    for (let i = 65; i <= 90; i++) {
+        const letter = String.fromCharCode(i); // Convert ASCII code to alphabet
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridItem.textContent = letter;
+        gridItem.addEventListener('click', () => {
+            // Retrieve content based on the clicked letter
+            const content = letterContent[letter];
+            // Open modal with the specific content
+            openModal(content);
+        });
+        gridContainer.appendChild(gridItem);
+    }
+
+    // Close the modal when the close button is clicked
+    const closeModal = document.querySelector('.close');
+    closeModal.addEventListener('click', () => {
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+    });
+</script>
+
+</html>

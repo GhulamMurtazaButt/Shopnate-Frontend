@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Shopnate</title>
+    <style>
+        main {
+            font-family: 'Poppins';
+        }
+
+        .hero {
+            background-color: #0F1E35;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 0 40px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #43BFA6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 32px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background-color: #00B2A1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .counting-section {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .counting-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .counting-number {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #43BFA6;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding: 100px 20px;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .hero-image {
+                justify-content: center;
+                margin-top: 50px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .counting-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .counting-number {
+                font-size: 2rem;
+            }
+        }
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            width: 100%;
+            position: relative;
+
+        }
+
+        .wrapper i {
+            height: 50px;
+            width: 50px;
+            color: white;
+            background: #00BDAA;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            font-size: 1.25 rem;
+            transform: translateY(-50%);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+
+        }
+
+        .wrapper i:first-child {
+            left: -22px;
+
+        }
+
+        .wrapper i:last-child {
+            right: -22px;
+
+        }
+
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3) - 12px);
+            gap: 23px;
+            padding: 10px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: 0;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel :where(.card, .img) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel.dragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+
+        .carousel.no-transition {
+            scroll-behavior: auto;
+        }
+
+        .carousel.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+
+        .carousel .card {
+            scroll-snap-align: start;
+            height: 340px;
+            border: 1px solid #DADADB;
+            list-style: none;
+            background: #fff;
+            border-radius: 8px;
+            display: flex;
+            cursor: pointer;
+            width: 98%;
+            padding-bottom: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+        }
+
+        .carousel .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .img img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        .card h2 {
+            font-weight: 500;
+            font-size: 1.56rem;
+            margin: 30px 0 5px;
+        }
+
+        .card span {
+            color: #6a6d78;
+            font-size: 0.9rem;
+            padding: 0px 20px;
+
+        }
+
+        @media screen and (max-width: 900px) {
+            .wrapper .carousel {
+                grid-auto-columns: calc((100% / 2) - 9px);
+
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .wrapper .carousel {
+                grid-auto-columns: 100%;
+
+            }
+        }
+
+        /* Default styles */
+        .video-background {
+            display: flex;
+            background-color: #f0f0f0;
+            padding: 60px 50px;
+        }
+
+        .content1 {
+            width: 50%;
+            padding: 0 20px;
+        }
+
+        .video-container {
+            width: 50%;
+        }
+
+        .video-container iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Styles for content */
+        .heading {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .video-background {
+                flex-direction: column-reverse;
+                padding: 20px;
+            }
+
+            .content1,
+            .video-container {
+                width: 100%;
+            }
+
+            .video-container iframe {
+                height: 400px;
+
+            }
+
+            .content {
+                margin-bottom: 30px;
+            }
+
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .description {
+                font-size: 1.2rem;
+            }
+        }
+
+        .steps {
+            display: flex;
+            background-color: #0F1E35;
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+        }
+
+        .last-container {
+            padding: 40px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .last-container-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .last-container-section h2 {
+            color: #00D6BD;
+        }
+
+        .last-container-section p {
+            color: white;
+            padding-bottom: 20px;
+        }
+
+        .bottom-section-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .bottom-icon {
+            margin-right: 8px;
+        }
+
+        .bottom-icon img {
+            width: 60px;
+        }
+
+        .bottom-section-heading {
+            font-weight: 600;
+            font-size: 18px;
+            color: #00D6BD;
+        }
+
+        .bootom-paragraph {
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .last-container {
+                padding: 20px;
+
+            }
+
+            .bottom-icon img {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .bottom-section-heading {
+                font-size: 16px;
+            }
+
+            .bottom-section-item-text {
+                font-size: 14px;
+            }
+
+            .bootom-paragraph {
+                font-size: 12px;
+            }
+        }
+
+        .image-class {
+            display: flex;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-class img {
+            width: 100%;
+        }
+
+        .last-container-section {
+            width: 70%;
+        }
+
+        .last-container-section h2 {
+            font-size: 24px;
+            color: #00D6BD;
+            margin-bottom: 10px;
+        }
+
+        .last-container-section p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .bottom-section-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .bottom-icon img {
+            width: 60px;
+        }
+
+        .bottom-section-heading {
+            font-weight: bold;
+            font-size: 18px;
+            color: #00D6BD;
+        }
+
+        .bootom-paragraph {
+            color: #fff;
+        }
+
+        .causes-section {
+            background-image: url('../images/CAUSES.png');
+            background-size: cover;
+            margin-top: 50px;
+            position: relative;
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        .causes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 4rem;
+            color: #00D6BD;
+        }
+
+        .content h3 {
+            font-size: 2rem;
+        }
+
+
+        .content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .or {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            display: block;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .content {
+                padding: 0 20px;
+            }
+        }
+
+        .shopnateapp {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .shopnate-content {
+            flex: 1;
+            padding: 0px 20px;
+            text-align: left;
+        }
+
+        .shopnate-heading {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .shopnate-description {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .playstore-images {
+            display: flex;
+        }
+
+        .downloadimage img {
+            width: 200px;
+        }
+
+        .playstore-images div {
+            margin-right: 10px;
+            /* Adjust spacing between images */
+        }
+
+        .shopnate-image-container {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .shopnate-image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 450px) {
+            .playstore-images {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .downloadimage img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 365px) {
+            .playstore-images {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .downloadimage img {
+                width: 110px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .playstore-images {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .shopnateapp {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .shopnate-content {
+                text-align: center;
+            }
+
+            .shopnate-image-container {
+                margin-top: 20px;
+                /* Adjust spacing between content and image */
+            }
+        }
+        .carousel a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Shop Online and Make a Difference!</h1>
+                <p>Welcome to Australia’s leading online shopping & fundraising platform. At Shopnate, the brands
+                    you love donate to the causes you love every time you shop. The more you shop, the more brands
+                    donate, the more you raise!</p>
+                <a href="./RegisterCause.html" class="cta-btn">Sign Up and Get Shopping!</a>
+            </div>
+            <div class="hero-image">
+                <img src="../images/Homepage-banner-img1.png" alt="Hero Image">
+            </div>
+        </section>
+        <section class="counting-section">
+            <h2>We've raised donations for</h2>
+            <div class="counting-number" data-count="1776">0</div>
+            <p>causes and counting!</p>
+            <div class="slider">
+                <div class="wrapper">
+                    <i id="left" class="fa-solid  fas fa-angle-left"></i>
+                    <ul class="carousel">
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        <a href="./transaction.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/300px-EBay_logo.svg.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                eBay
+                            </h2>
+                            <span>1.5% per sale to your cause
+                                Whatever it is, you can get it on eBay</span>
+                        </li>
+                    </a>
+                        
+
+                    </ul>
+                    <i id="right" class="fa-solid fas fa-angle-right"></i>
+                </div>
+
+            </div>
+            <a href="./Shop.html" class="cta-btn">Check out all the brands on Shopnate</a>
+        </section>
+        <div class="video-background">
+            <div class="content1">
+                <h1 class="heading">HOW THE MAGIC HAPPENS</h1>
+                <p class="description">At Shopnate, we've partnered with hundreds of brands to support the causes you
+                    care about. As Australia’s leading shopping and fundraising platform, we collaborate with over 600
+                    top brands and retailers who generously donate a portion of every purchase to your chosen cause. The
+                    best part? It doesn't cost you a cent extra!</p>
+                <p class="description">The brand pays for the donation. How good is that! Now that you know how the
+                    magic happens, why would you shop anywhere else!?</p>
+                <a href="./Causes.html" class="cta-btn">Find out more about how it works</a>
+            </div>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/wq3ekayQ7ig?autoplay=1&controls=0&loop=1&mute=1&playlist=wq3ekayQ7ig"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="steps">
+            <div class="image-class">
+                <img src="../images/GET_STARTED_625 x 661.png" alt="Get started">
+            </div>
+            <div class="last-container">
+
+                <div class="last-container-section">
+                    <h2>GETTING STARTED IS AS EASY AS 1, 2, 3, 4.</h2>
+                    <p>HOW TO GET STARTED</p>
+
+                    <div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/Group1.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">Pick a cause and signup to support them</div>
+                                <div class="bootom-paragraph">Tell us what your favourite cause is so we can make sure
+                                    they receive the donation you have generated.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/Group2.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">Download the Shopnate app</div>
+                                <div class="bootom-paragraph">Never miss a donation. Get deals and discounts to help you
+                                    shop and raise donations for your cause.</div>
+                            </div>
+                        </div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/Group3.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">Download our Chrome Extension</div>
+                                <div class="bootom-paragraph">The Shopnate Extension will pop up to tell you if the
+                                    store you’re browsing supports donations through Shopnate. </div>
+                            </div>
+                        </div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/Group1.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">See how your shopping is raising donations</div>
+                                <div class="bootom-paragraph">Each time you shop, the brand will email you an order
+                                    confirmation and Shopnate will email you to tell you how much you’ve raised. </div>
+                            </div>
+
+                        </div>
+                        <a href="./Causes.html" class="cta-btn">Get raising today!</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <section class="counting-section">
+            <h2>Meet the causes Aussies are raising funds for</h2>
+            <div class="slider">
+                <div class="wrapper">
+                    <i id="left" class="fa-solid  fas fa-angle-left"></i>
+                    <ul class="carousel">
+                        <a href="./innerCauses.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/check.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                Pets Haven Foundation
+                            </h2>
+                            <span>392 SUPPORTERS ON SHOPNATE</span>
+                        </li>
+                    </a>
+                        <a href="./innerCauses.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/check.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                Pets Haven Foundation
+                            </h2>
+                            <span>392 SUPPORTERS ON SHOPNATE</span>
+                        </li>
+                    </a>
+                        <a href="./innerCauses.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/check.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                Pets Haven Foundation
+                            </h2>
+                            <span>392 SUPPORTERS ON SHOPNATE</span>
+                        </li>
+                    </a>
+                        <a href="./innerCauses.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/check.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                Pets Haven Foundation
+                            </h2>
+                            <span>392 SUPPORTERS ON SHOPNATE</span>
+                        </li>
+                    </a>
+                        <a href="./innerCauses.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/check.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                Pets Haven Foundation
+                            </h2>
+                            <span>392 SUPPORTERS ON SHOPNATE</span>
+                        </li>
+                    </a>
+                        <a href="./innerCauses.html">
+                        <li class="card">
+                            <div class="img"><img src="../images/check.png" alt="" draggable="false">
+                            </div>
+                            <h2 style=" font-weight:bold;">
+                                Pets Haven Foundation
+                            </h2>
+                            <span>392 SUPPORTERS ON SHOPNATE</span>
+                        </li>
+                    </a>
+                        
+                    </ul>
+                    <i id="right" class="fa-solid fas fa-angle-right"></i>
+                </div>
+
+            </div>
+            <a href="#" class="cta-btn">Check out all the brands on Shopnate</a>
+        </section>
+
+        <div class="shopnateapp">
+            <div class="shopnate-content">
+                <h1 class="shopnate-heading">Download the Shopnate app</h1>
+                <p class="shopnate-description">Get Shopnate on your mobile device. Scan the QR code and get raising!
+                    You can also find our app on the App Store or on Google Play.</p>
+                <div class="playstore-images">
+                    <a href="https://apps.apple.com/au/app/easyfundraiser/id1221207112">
+                        <div class="downloadimage"><img src="../images/Download_on_the_App_Store_logo.png"
+                                alt="Download on the App Store"></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.shopnate.easyfundraiser&hl=en">
+                        <div class="downloadimage"><img src="../images/get-it-on-google-play-badge-1.png"
+                                alt="Get it on Google Play"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="shopnate-image-container">
+                <img src="../images/Shopnate app.png" alt="Shopnate App">
+            </div>
+        </div>
+
+
+        <div class="causes-section">
+            <div class="content">
+                <h2>CAUSES</h2>
+                <h3>Thousands of Australians have already spent more than $3 million through Shopnate raising money for
+                    2000 causes</h3>
+                <p>As Australia’s leading shopping & fundraising platform we are partnering with more causes every day.
+                    See which causes are already on board!</p>
+                <a href="./Causes.html" class="cta-btn">Check out all the causes</a> or
+                <a href="./RegisterCause.html" class="cta-btn">Register your own cause</a>
+            </div>
+        </div>
+
+
+
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footerContainer').innerHTML = html);
+
+        // Counting Animation
+        const countingNumber = document.querySelector('.counting-number');
+        let count = 0;
+        setInterval(() => {
+            const target = parseInt(countingNumber.getAttribute('data-count'));
+            const increment = Math.ceil(target / 100);
+            if (count < target) {
+                count += increment;
+                countingNumber.textContent = count;
+            }
+        }, 10);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector(".carousel");
+            const arrowBtns = document.querySelectorAll(".wrapper i");
+            const wrapper = document.querySelector(".wrapper");
+
+            const firstCard = carousel.querySelector(".card");
+            const firstCardWidth = firstCard.offsetWidth;
+
+            let isDragging = false,
+                startX,
+                startScrollLeft,
+                timeoutId;
+
+            const dragStart = (e) => {
+                isDragging = true;
+                carousel.classList.add("dragging");
+                startX = e.pageX;
+                startScrollLeft = carousel.scrollLeft;
+            };
+
+            const dragging = (e) => {
+                if (!isDragging) return;
+
+                // Calculate the new scroll position 
+                const newScrollLeft = startScrollLeft - (e.pageX - startX);
+                if (newScrollLeft <= 0 || newScrollLeft >=
+                    carousel.scrollWidth - carousel.offsetWidth) {
+
+                    // If so, prevent further dragging 
+                    isDragging = false;
+                    return;
+                }
+
+                carousel.scrollLeft = newScrollLeft;
+            };
+
+            const dragStop = () => {
+                isDragging = false;
+                carousel.classList.remove("dragging");
+            };
+
+            const autoPlay = () => {
+
+                if (window.innerWidth < 800) return;
+
+                const totalCardWidth = carousel.scrollWidth;
+                const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
+                if (carousel.scrollLeft >= maxScrollLeft) return;
+
+                timeoutId = setTimeout(() =>
+                    carousel.scrollLeft += firstCardWidth, 2500);
+            };
+
+            carousel.addEventListener("mousedown", dragStart);
+            carousel.addEventListener("mousemove", dragging);
+            document.addEventListener("mouseup", dragStop);
+            wrapper.addEventListener("mouseenter", () =>
+                clearTimeout(timeoutId));
+            wrapper.addEventListener("mouseleave", autoPlay);
+
+            arrowBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    carousel.scrollLeft += btn.id === "left" ?
+                        -firstCardWidth : firstCardWidth;
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

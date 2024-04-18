@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Category-Shop</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        main {
+            font-family: 'Poppins';
+        }
+
+        .container {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('../images/Mask group (6).png');
+            background-size: cover;
+            padding: 0 20px;
+        }
+
+        .container p {
+            font-size: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #FFB700;
+            max-width: 80%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .firstsection {
+            background-color: white;
+            padding: 40px 60px;
+        }
+
+        .text-section p {
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container p {
+                font-size: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container p {
+                font-size: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        @media only screen and (max-width: 567px) {
+            .container p {
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .container p {
+                font-size: 14px;
+            }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .custom-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e5e5e5;
+            padding: 35px 14px;
+            border-radius: 7px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            width: 100%;
+            align-items: center;
+            transition: transform 0.3s ease;
+
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+
+        }
+
+        .custom-card img {
+            height: auto;
+            width: 100%;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        .custom-card h3 {
+            color: #FFB700;
+            margin: 0;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 999;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Enable scrolling if needed */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black with opacity */
+        }
+
+        /* Modal Content Styles */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* Close Button Styles */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .model-style {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .list-container .list {
+            flex: 0 0 48%;
+            /* Adjust width as needed */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .list-container .list h3 {
+            margin-top: 0;
+        }
+
+        .list-container .list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .list-container .list ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .list-container .list ul li::before {
+            content: '\2713';
+            /* Unicode character for checkmark */
+            position: absolute;
+            left: 0;
+            color: green;
+        }
+
+        .custom-button {
+            background-color: #FDE60C;
+            border: 2px solid #FDE60C;
+            color: black;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 22px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="container">
+
+            <p>Get our new web shopping app Easy Fundraiser and raise more</p>
+        </div>
+        <div class="firstsection">
+            <div class="text-section">
+                <p>It’s great you want to shop to support Allowah Presbyterian Children's Hospital but have you ever
+                    forgotten to visit the Shopnate site first? The Easy Fundraiser web app means you will never miss a
+                    free donation</p>
+            </div>
+            <div id="customCardContainer" class="card-grid"></div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <!-- Close Button -->
+                    <span class="close">&times;</span>
+                    <div class="model-style">
+                        <figure><img id="modalImg" src="" alt=""></figure>
+                        <h2 id="modalTitle"></h2>
+
+                        <!-- Modal Content -->
+                        <h2>Raise up to 1.5% per sale to your cause</h2>
+                        <p>yoox.com is the world’s leading online lifestyle store for fashion, design, and art...</p>
+                    </div>
+                    <!-- Tips to Ensure Successful Raise -->
+                    <div class="list-container">
+                        <div class="list">
+                            <h3>Tips to ensure you raise successfully:</h3>
+                            <ul>
+                                <li>If installed disable ad blocking software entirely during shopping session</li>
+                                <li>Ensure cart is empty before clicking through</li>
+                                <li>Click through again if there are any errors</li>
+                                <li>Click through each time you make a new purchase</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <h3>Funds may not be raised for:</h3>
+                            <ul>
+                                <li>Items added to cart before clicking through</li>
+                                <li>Returns, exchanges, or cancellations</li>
+                                <li>Gift cards purchases</li>
+                                <li>Promo codes or coupons not sourced from Shopnate</li>
+                                <li>Purchases paid with gift cards</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="custom-button">Shop now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+
+    function createCustomCard(imageSrc, titleText) {
+        const cardContainer = document.getElementById("customCardContainer");
+
+        const card = document.createElement("div");
+        card.classList.add("custom-card");
+
+        const image = document.createElement("img");
+        image.src = imageSrc;
+        card.appendChild(image);
+
+        const title = document.createElement("h3");
+        title.textContent = titleText;
+        card.appendChild(title);
+
+        // Add event listener to open modal
+        card.addEventListener("click", function () {
+            openModal(titleText, imageSrc);
+        });
+
+        cardContainer.appendChild(card);
+    }
+
+    // Example usage with multiple data
+    const cardData = [
+        { imageUrl: "../images/scouts_and_girl_guides.jpg", title: "Dan Murphys" },
+        { imageUrl: "../images/scouts_and_girl_guides.jpg", title: "Example Title 2" },
+        { imageUrl: "../images/scouts_and_girl_guides.jpg", title: "Example Title 3" },
+        { imageUrl: "../images/scouts_and_girl_guides.jpg", title: "Example Title 3" },
+        { imageUrl: "../images/scouts_and_girl_guides.jpg", title: "Example Title 3" },
+        // Add more card data as needed
+    ];
+
+    cardData.forEach(data => {
+        createCustomCard(data.imageUrl, data.title);
+    });
+
+    function openModal(title, imgUrl) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImg");
+        var modalTitle = document.getElementById("modalTitle");
+
+        modalImg.src = imgUrl;
+        modalTitle.textContent = title;
+
+        modal.style.display = "block";
+    }
+
+    var closeBtn = document.getElementsByClassName("close")[0];
+    closeBtn.onclick = function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+
+    }
+</script>
+
+</html>

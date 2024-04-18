@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Footer</title>
+   <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+     
+
+        @media screen and (max-width: 280px) {
+
+            .footer-top {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+        @media screen and (max-width: 250px) {
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .copyright p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        @media screen and (max-width: 260px) {
+            .copyright p {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        
+        .copyright {
+            text-align: center;
+            padding: 20px 100px;
+            background-color: #071E35;
+            color: white;
+            border-top: 1px solid white;
+
+        }
+
+        .copyright p {
+            font-size: 14px;
+        }
+
+        .footer-top {
+            background-color: #071E35;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            padding: 8px;
+        }
+
+        .footer-logo img {
+            max-width: 100%;
+
+        }
+
+        .social-icons {
+            flex: 1;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+            color: white;
+            /* Adjust color as needed */
+        }
+
+        .footer-second {
+            background-color: #071E35;
+            color: #fff;
+            padding: 60px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-section {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .copyright {
+                text-align: center;
+                padding: 20px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="../images/new-logo 1.png" alt="Logo">
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+                <!-- Add more social media icons as needed -->
+            </div>
+        </div>
+        <div class="footer-second">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">Check out the brands</a></li>
+                        <li><a href="#">Shopnate App</a></li>
+                        <li><a href="#">Shopnate Extention</a></li>
+                        <li><a href="#">Refer a friends</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>How it works</h3>
+                    <ul>
+                        <li><a href="#">For Shoppers</a></li>
+                        <li><a href="#">For Fundraisers</a></li>
+                        <li><a href="#">For Retailers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Term & Conditions</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Get started</h3>
+                    <ul>
+                        <li><a href="#">Register a Cause</a></li>
+                        <li><a href="#">Shop & raise for cause</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>(C) 2023. SHOPNATE IS A REGISTERED COMPANY. SHOPNATE IS BOUND BY THE PRIVACY ACT 1988 (CRC), WHICH
+                SETS
+                OUT A NUMBER OF PRINCIPLES CONCERNING THE PRIVACY OF INDIVIDUALS. ALL RIGHTS RESERVED. ABN: 601 110
+                016
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

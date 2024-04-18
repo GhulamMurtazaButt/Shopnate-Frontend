@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shopnate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        main {
+            font-family: 'Poppins';
+        }
+
+        .container {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('../images/55dac1c4de45f559cff387ab8adbb961.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0 20px;
+        }
+
+        .container p {
+            font-size: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #FFB700;
+            max-width: 80%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .text-section {
+            background-color: white;
+            padding: 40px 60px;
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container p {
+                font-size: 20px;
+            }
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .flex-direction {
+                flex-direction: column;
+            }
+
+
+        }
+
+        .top-section {
+            display: flex;
+
+        }
+
+        .top {
+            padding: 40px 60px;
+        }
+
+        .flex-direction {
+            display: flex;
+
+            align-items: center;
+            justify-content: flex-start;
+            margin: -20px 0px 10px 20px;
+            padding-bottom: 20px;
+        }
+
+        .charitylogo {
+
+            padding: 10px;
+            border: 1px solid #e5e5e5;
+            border-radius: 7px;
+            margin-right: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            background-color: #fff;
+        }
+
+        .charitylogo img {
+            width: 130px;
+            max-width: 130px !important;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .supporter-title {
+            font-weight: 600;
+            font-size: 34px;
+            color: black;
+
+        }
+
+
+        .color-3 {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+
+        .address{
+           color: #000;
+            text-decoration: underline;
+        }
+        .address :hover{
+            color: #FFB700;
+            text-decoration: underline;
+        }
+
+        .last-container {
+            background-color: #B8D9CA;
+            padding: 80px 20%;
+        }
+
+        .last-container-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .last-container-section p {
+            padding-bottom: 20px;
+        }
+
+        .bottom-section-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .bottom-icon {
+            margin-right: 8px;
+        }
+
+        .bottom-icon img {
+            width: 60px;
+        }
+
+        .bottom-section-heading {
+            font-weight: 600;
+            color: black;
+        }
+
+        .bootom-paragraph {
+            color: black;
+        }
+
+        .last-container {
+            padding: 80px 20%;
+        }
+
+        @media screen and (max-width: 280px) {
+            .bottom-icon img {
+                width: 40px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .last-container {
+                padding: 40px 10px;
+            }
+
+            .last-container-section {
+                padding: 0;
+            }
+        }
+
+        @media screen and (max-width: 1050px) {
+            .heading {
+                padding-right: 50px;
+            }
+        }
+
+        @media screen and (max-width: 345px) {
+            .button-container {
+                flex-direction: column;
+            }
+
+            .button {
+                margin-right: 5px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .register-btn {
+            background-color: #FDE60C;
+            border: #FDE60C;
+            padding: 15px 20px;
+            border-radius: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .content-wrapper {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .shopnateapp {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .shopnate-content {
+            flex: 1;
+            padding: 0px 20px;
+            text-align: left;
+        }
+
+        .shopnate-heading {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .shopnate-description {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .playstore-images {
+            display: flex;
+        }
+
+        .downloadimage img {
+            width: 200px;
+        }
+
+        .playstore-images div {
+            margin-right: 10px;
+            /* Adjust spacing between images */
+        }
+
+        .shopnate-image-container {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .shopnate-image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 450px) {
+            .playstore-images {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .downloadimage img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 365px) {
+            .playstore-images {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .downloadimage img {
+                width: 110px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .playstore-images {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .shopnateapp {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .shopnate-content {
+                text-align: center;
+            }
+
+            .shopnate-image-container {
+                margin-top: 20px;
+                /* Adjust spacing between content and image */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="container">
+            <p></p>
+        </div>
+        <div class="top">
+            <div class="flex-direction">
+                <div class="charitylogo">
+                    <img src="https://www.staging.shopnate.com.au/images/charity_logos/images/image_2014_09_10_01_54_51.jpg"
+                        alt="Pets Haven Foundation">
+                </div>
+                <div class="content">
+                    <h2 class="supporter-title">Pets Haven Foundation</h2>
+                    <br>
+                    <p class="color-3">392 Supporters On Shopnate</p>
+                </div>
+            </div>
+            <div >
+                <p>6/130 High street, Woodend, Victoria</p>
+                <a class="address" href="#">
+                    <p>Read Term and Conditions</p>
+                </a>
+            </div>
+
+        </div>
+        <div class="last-container">
+            <div class="last-container-section">
+                <h2>How to get started raising free funds for your good cause</h2>
+                <p>Getting started is simple.</p>
+                <div>
+                    <div class="bottom-section-item">
+                        <div class="bottom-icon"><img src="../images/startup.png" alt="icon"></div>
+                        <div class="bottom-section-item-text">
+                            <div class="bottom-section-heading">1. Start Raising Donations for Pets Haven Foundation
+                            </div>
+                            <div class="bootom-paragraph">Choose Pets Haven Foundation as your preferred charity/cause
+                                to support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-section-item">
+                        <div class="bottom-icon"><img src="../images/pngwing.com.png" alt="icon"></div>
+                        <div class="bottom-section-item-text">
+                            <div class="bottom-section-heading">2. Shop your Favourite Retailer
+                            </div>
+                            <div class="bootom-paragraph">Select the retailer you want to shop and shop as normal.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-section-item">
+                        <div class="bottom-icon"><img src="../images/icons8-fundraising-64.png" alt="icon"></div>
+                        <div class="bottom-section-item-text">
+                            <div class="bottom-section-heading">3. Raise donations</div>
+                            <div class="bootom-paragraph">Thank you! A percentage of your sale is given by the retailer
+                                to Pets Haven Foundation </div>
+
+                            <button class="register-btn">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <section class="section">
+                <h2>About Pets Haven Foundation</h2>
+                <p>Imagine being able to make a donation to Pets Haven Foundation every time you shop online and at no
+                    extra cost to you. Well that’s exactly how Shopnate works.</p>
+            </section>
+            <section class="section">
+                <h2>What does Pets Haven Foundation do?</h2>
+                <p>Pets Haven is not your normal everyday animal shelter. We are a Pro-Life facility, we do not believe
+                    in euthanizing healthy animals for economic reasons or to simply make room.
+                    Our emphasis relates to helping both human beings and our orphaned animals. We strongly believe in
+                    respecting both ‘human and fur’.
+                    Our aim is to responsibly rehouse companion pets back into our community, where they belong.
+                    We rescue animals from pounds, puppy farms, cruelty cases and take in animals from members of the
+                    community, who can no longer look after their pets.
+                    All of our orphans are provided with the appropriate veterinary treatment such as health checks,
+                    desexing, vaccinations, micro chipping, worming, flea treatments, dentals and we even parvovirus
+                    test our canines.
+                    Pets Haven Foundation is not funded in any way. We solely rely on donations and fundraising events.
+                </p>
+            </section>
+            <section class="section">
+                <h2>How your donations help?</h2>
+                <p>Pets Haven rely solely on donations and fundraising to keep the shelter running. Here are a few
+                    things your donation will assist with: Rent, Electricity, Water, Insurance, Vehicle
+                    Registration/Insurance and Maintenance, Petrol, Veterinary Fees, Insurance Fees, Staff wages,
+                    Internet, Food, Medications, Flea and Worm Treatment, Grooming, Building maintenance, Office
+                    supplies, Cleaning supplies, Kitty Litter and Hay and Veterinary treatment for our rescue horses.
+                </p>
+            </section>
+            <section class="section">
+                <h2>Share in the success of Pets Haven Foundation?</h2>
+                <p>Pets Haven rescue a lot of animals involved in cruelty cases, such as Stella. Stella is a 10 year old
+                    German Shepherd who was left tied to a stable door with no food and little water until she was on
+                    deaths door. When she came into Pets Haven's care, she could barely stand, she was severely
+                    emaciated and dehydrated and required immediate lifesaving fluids, antibiotics and hand feeding of
+                    special no fat food, as her gut could not handle anything rich. Stella's chain had severely burnt
+                    her neck in a particularly hot summer week we were having and she was covered in pustules and
+                    tumours. Stella, 8 months on, is still in Pets Havens care. She has had thousands of dollars in
+                    blood tests, specialist visits, veterinary visits, special dietary food and treatments. Stella is
+                    still not strong enough to have her mammary tumours surgically removed so will live the remainder of
+                    her life in foster care under Pets Haven's staff and vets guidance.</p>
+            </section>
+            <section class="section">
+                <h2>How can I help Pets Haven Foundation just by shopping online?</h2>
+                <p>Shopnate works with hundreds of leading stores that have signed up to donate a commission on every
+                    online purchase to the charity of your choice. This commission is already included in the price of
+                    what you’re buying, so you can support your favourite cause, at no extra cost to you.</p>
+            </section>
+        </div>
+        <div class="shopnateapp">
+            <div class="shopnate-content">
+                <h1 class="shopnate-heading">Never Miss a Donation Again.                </h1>
+                <p class="shopnate-description">The Donation Reminder pops up when a brand will donate as you're browsing.
+                    You don't have to remember to start your shop at easyfundraising , get your donations in one quick tap!</p>
+                    <button class="register-btn">Add the Donation Reminder</button>
+            </div>
+            <div class="shopnate-image-container">
+                <img src="../images/CAUSES.png" alt="Shopnate App">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+</script>
+
+</html>

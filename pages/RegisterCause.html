@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Register a Cause</title>
+    <style>
+        main {
+            background-color: #03B664;
+            font-family: 'Poppins';
+        }
+
+        .page-heading {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .logo img {
+            width: auto;
+            height: auto;
+            padding: 5px;
+        }
+
+        .page-title {
+            font-weight: 600;
+            font-size: 20px;
+            color: white;
+        }
+
+        .first-section {
+            padding: 20px 100px;
+        }
+
+        .inner-first-section {
+            display: flex;
+        }
+
+        .inner-first-section-left-side {
+            width: 10%;
+        }
+
+        .inner-first-section-left-side img {
+            width: 80px;
+        }
+
+        .inner-first-section-right-side1 {
+            display: flex;
+            align-items: center;
+            padding-left: 80px;
+            width: 90%;
+            background-color: white;
+            padding-right: 80px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: -1px;
+
+        }
+
+        .inner-first-section-right-side2 {
+            align-items: center;
+            padding-left: 80px;
+            width: 90%;
+            padding-right: 80px;
+            background-color: white;
+            margin-bottom: -1px;
+        }
+
+        .inner-first-section-right-side3 {
+            padding-left: 80px;
+            width: 90%;
+            padding-right: 80px;
+            background-color: white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding-top: 50px;
+            padding-bottom: 30px;
+        }
+       
+       
+
+        .text-side3 {
+            padding-bottom: 20px;
+        }
+
+        .custom-button {
+            background-color: #FDE60C;
+            border: 2px solid #FDE60C;
+            color: black;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 22px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .submit-button {
+            background-color: #FFB701;
+            border: 2px solid #FFB701;
+            color: black;
+            padding: 15px 25px;
+            margin-right: 10px;
+            border-radius: 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: hidden;
+            border-top: 2px solid #03B664;
+            border-bottom: 2px solid #03B664;
+            position: relative;
+        }
+
+        .arrow-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 100%;
+            z-index: 1;
+
+            left: 0;
+            /* Positioning left */
+        }
+
+        .right-arrow-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 100%;
+            z-index: 1;
+            right: 0;
+            /* Positioning right */
+        }
+
+        .arrow {
+            cursor: pointer;
+            font-size: 26px;
+            background: white;
+            padding: 12px 22px 12px 22px;
+            color: black;
+            border-radius: 50%;
+            font-weight: 600;
+        }
+
+        .scrolling-section {
+            background-color: #03B664;
+            padding: 35px 70px;
+            border-radius: 8px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .scroll-item {
+            border-radius: 8px;
+            width: auto;
+            padding: 10px;
+            background-color: white;
+            margin-right: 17px;
+            font-size: 18px;
+            width: calc(33.33% - 0px);
+        }
+
+        .scroll-item2 {
+            border-radius: 8px;
+            width: auto;
+            padding: 10px;
+            background-color: white;
+            margin-right: 17px;
+            font-size: 18px;
+        }
+
+        .scroll-item p {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .image-container {
+            border-radius: 6px;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .image-container img {
+            width: 150px;
+            height: 170px;
+            border-radius: 7px;
+        }
+
+        .item-text {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .step3 {
+            display: flex;
+
+        }
+
+        .form-section {
+            width: 50%;
+            background-color: #071E35;
+            padding: 20px 30px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .image-section {
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .image-section img {
+            width: 350px;
+            height: auto;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group p {
+            text-align: left;
+            color: white;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 22px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .input-group input[type="text"] {
+            padding-left: 40px;
+            background-image: url('../images/Group.png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.3rem;
+        }
+
+        .input-group input[type="email"] {
+            padding-left: 40px;
+            background-image: url('../images/Vector\ \(4\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.4rem;
+        }
+
+        .input-group input[type="password"] {
+            padding-left: 40px;
+            background-image: url('../images/Vector\ \(5\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1rem;
+        }
+
+        .input-group input[type="number"] {
+            padding-left: 40px;
+            background-image: url('../images/Group\ \(2\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1rem;
+        }
+
+        .firstname input[type="text"] {
+            padding-left: 40px;
+            background-image: url('../images/Group\ \(1\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.1rem;
+        }
+
+        .school input[type="text"] {
+            padding-left: 40px;
+            background-image: url('../images/Group\ \(1\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.1rem;
+        }
+
+        .postal-code input[type="number"] {
+            padding-left: 40px;
+            background-image: url('../images/Vector\ \(6\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.1rem;
+        }
+
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 22px;
+            border: 1px solid #ccc;
+            outline: none;
+            padding-left: 40px;
+            background-image: url('../images/Vector\ \(7\).png');
+            background-repeat: no-repeat;
+            background-position: 12px center;
+            background-size: 1.1rem;
+        }
+
+        .after-form {
+            padding-top: 20px;
+        }
+
+        .after-form ul {
+            padding-bottom: 20px;
+        }
+
+        .after-form p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .after-form textarea {
+            background-color: #0F1E35;
+            padding: 10px;
+            border-radius: 8px;
+            border-color: #0F1E35;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+
+        }
+
+        .after-form ::placeholder {
+            color: white;
+            font-size: 16px;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        .after-form ::-ms-input-placeholder {
+            font-size: 16px;
+            color: white;
+        }
+
+        .after-form h3 {
+            color: #32CCE8;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        .after-steps {
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding-bottom: 40px;
+        }
+
+        .after-steps h3 {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .after-steps h2 {
+            font-size: 40px;
+        }
+
+        .after-steps img {
+            width: 400px;
+            height: auto;
+            padding-bottom: 20px;
+        }
+
+        .steps {
+            background-color: #0F1E35;
+            padding: 30px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .inner-steps {
+            display: flex;
+        }
+
+        .inner-steps img {
+            width: 130px;
+            height: 130px;
+        }
+
+        .p1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .steps-style {
+            padding: 20px;
+        }
+
+        .faq-section {
+            background-color: white;
+            display: flex;
+            padding: 50px;
+            
+        }
+        .faq-with-head {
+            background-color: white;
+            padding-top: 40px;
+           
+        }
+
+        .faq-header {
+            text-align: center;
+            font-size: 42px;
+            padding: 24px;
+        }
+
+        .faq-content {
+            margin: 0 auto;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            border-bottom: 0.5px solid black;
+
+
+        }
+
+        .panel-title {
+            font-size: 24px;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 5px 10px 0 60px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .panel-content {
+            font-size: 20px;
+            padding: 0px 14px;
+            margin: 0 40px;
+            height: 0;
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+            opacity: 0;
+            -webkit-transition: .4s ease;
+            -moz-transition: .4s ease;
+            -o-transition: .4s ease;
+            transition: .4s ease;
+            color: black;
+        }
+
+        .panel:checked~.panel-content {
+            height: auto;
+            opacity: 1;
+            padding: 14px;
+        }
+
+        .plus {
+            position: absolute;
+            margin-left: 20px;
+            margin-top: 4px;
+            z-index: 5;
+            font-size: 42px;
+            line-height: 100%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            -webkit-transition: .2s ease;
+            -moz-transition: .2s ease;
+            -o-transition: .2s ease;
+            transition: .2s ease;
+        }
+
+        .panel:checked~.plus {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .panel {
+            display: none;
+        }
+
+        .faq-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+        .faq-left {
+          
+            width: 50%;
+        }
+
+        .faq-right img {
+            width: 500px;
+        }
+        .bottom-section{
+            padding: 50px;
+            padding-bottom: 80;
+        }
+        .bottom-section h3{
+            color: white;
+            font-size: 35px;
+            text-align: center;
+
+        }
+        .bottom-section h2{
+            color: white;
+            font-size: 35px;
+            font-weight: 400;
+            text-align: center;
+            padding-bottom: 80px;
+
+        }
+        .inner-bottom{
+            display: flex;
+    text-align: center;
+        }
+        .bottom-section-img{
+            width: 50%;
+        }
+        .bottom-section-img img{
+            width: 450px;
+        }
+        .text-part{
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+            width: 35%;
+        }
+    .textpart-text{
+        text-align: center;
+        font-size: 18px;
+    }
+        
+    @media only screen and (min-width: 768px) {
+        .inner-first-section-right-side1 h4{
+display: none;
+        }  
+        .inner-first-section-right-side2 h4{
+display: none;
+        }  
+        .inner-first-section-right-side3 h4{
+display: none;
+        }  
+}
+    @media only screen and (max-width: 940px) {
+        .inner-first-section-left-side img {
+    width: 65px;
+    padding-right: 6px;
+}
+.inner-first-section-right-side2 {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.inner-first-section-right-side1 {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.faq-right img {
+    width: 400px;
+}
+    }
+    @media only screen and (max-width: 1050px) {
+        .first-section {
+    padding: 20px 50px;
+}
+
+    }
+    @media only screen and (max-width: 800px) {
+        .faq-right img {
+    width: 350px;
+}
+
+    }
+    @media only screen and (max-width: 390px) {
+        .button-container{
+            flex-direction: column;
+        }
+        .custom-button {
+        margin-right: 5px;
+        margin-bottom: 10px;
+        }
+
+    }
+
+    @media only screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+
+    .first-section {
+        padding: 10px;
+    }
+
+    .inner-first-section {
+        flex-direction: column;
+    }
+    .inner-first-section-right-side1 {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .inner-first-section-left-side,
+    .inner-first-section-right-side1,
+    .inner-first-section-right-side2,
+    .inner-first-section-right-side3 {
+        width: 100%;
+        padding: 10px;
+    }
+    .inner-first-section-left-side {
+        display: none; 
+    }
+
+    .scroll-container {
+        overflow-x: scroll;
+    }
+
+    .scroll-item {
+        width: 150px;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .image-container img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .step3 {
+        flex-direction: column-reverse;
+    }
+
+    .form-section,
+    .image-section {
+        width: 100%;
+    }
+
+    .image-section img {
+        width: 310px;
+    height: auto;
+    padding-bottom: 35px;
+}
+
+    .input-group p {
+        font-size: 14px;
+    }
+
+    .after-steps img {
+        width: 300px;
+    }
+
+    .inner-steps img {
+        width: 100px;
+        height: 100px;
+    }
+    .after-steps h3{
+        font-size: 25px;
+    }
+    .after-steps h2{
+        font-size: 26px;
+    }
+
+    .p1 {
+        font-size: 16px;
+    }
+
+    .faq-section {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .faq-left,
+    .faq-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .faq-right img {
+        width: 350px;
+        height: auto;
+    }
+
+    .bottom-section {
+        padding: 10px;
+    }
+
+    .bottom-section h3,
+    .bottom-section h2 {
+        font-size: 20px;
+    }
+
+    .inner-bottom {
+        flex-direction: column;
+    }
+
+    .bottom-section-img {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .bottom-section-img img {
+        width: 350px;
+        height: auto;
+    }
+
+    .text-part {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .textpart-text {
+        font-size: 14px;
+    }
+
+    .after-form ul{
+        padding-left: 20px;
+
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="page-heading">
+            <div class="logo text-center"> <img src="../images/new-logo 1.png" alt="logo"></div>
+            <div class="page-title text-center">Register your Cause</div>
+
+        </div>
+        <div class="first-section">
+            <div class="inner-first-section">
+                <div class="inner-first-section-left-side">
+                    <img src="../images/Group 21.png" alt="step1">
+                </div>
+                <div class="inner-first-section-right-side1">
+                    <h4>Step 1: </h4>
+                    <p> Choose a Category</p>
+                </div>
+            </div>
+
+            <div class="inner-first-section">
+                <div class="inner-first-section-left-side">
+                    <img src="../images/Group 22.png" alt="step1">
+                </div>
+                <div class="inner-first-section-right-side2">
+                    <h4>Step 2:</h4>
+                    <p>Choose the type of cause/organisation so we can provide you with the right support & resources to
+                        help you raise more donations.</p>
+                    <div class="button-container">
+                        <button class="custom-button">Personal Fundraising</button>
+                        <button class="custom-button">Charity & NFPs</button>
+                        <button class="custom-button">Community Fundraising</button>
+                    </div>
+                    <div class="scrolling-section">
+                        <div class="arrow-container">
+                            <div class="arrow" id="leftArrow">&lt;</div>
+                        </div>
+                        <div class="scroll-container" id="scrollContainer">
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/kisspng-logo-brand-camps-international-malawi-ecuador-5b58b8f38a0720 1.png"
+                                        alt="Item Image">
+                                </div>
+                                <p class="item-text">Campus
+                                    International</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Mask group (2).png" alt="Item Image">
+                                </div>
+                                <p class="item-text">Personal
+                                    Challenge</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Mask group (3).png" alt="Item Image">
+                                </div>
+                                <p class="item-text"> Volunteer
+                                    Work</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/saving_towards_uni.jpeg" alt="Item Image">
+                                </div>
+                                <p class="item-text">Saving for Education
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/friend_or_relative_in_need.jpg" alt="Item Image">
+                                </div>
+                                <p class="item-text">Personal
+                                    Challenge</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/World_Challenge_Logo_V3_Square.png" alt="Item Image">
+                                </div>
+                                <p class="item-text">World Challenge
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Default_RA_Pic1_Retirement.jpg" alt="Item Image">
+                                </div>
+                                <p class="item-text">Pension Account
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Antipodeans_logo_V2.png" alt="Item Image">
+                                </div>
+                                <p class="item-text">Antipodeans
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="right-arrow-container">
+                            <div class="arrow" id="rightArrow">&gt;</div>
+                        </div>
+                    </div>
+                    <p>Camps International and Shopnate have teamed up to boost your fundraising. When selecting a Cause
+                        Name use your name so your friends and family can easily find it eg "Casey's Borneo expedition
+                        2019</p>
+                </div>
+
+            </div>
+
+            <div class="inner-first-section">
+                <div class="inner-first-section-left-side">
+                    <img src="../images/Group 28.png" alt="step1">
+                </div>
+                <div class="inner-first-section-right-side3">
+                    <h4>Step 3: </h4>
+                    <p class="text-side3">Register your details below to raise free funds.</p>
+                    <div class="step3">
+                        <div class="form-section">
+                            <div class="input-group">
+                                <p>Cause Name</p>
+                                <input type="text" placeholder="Cause Name">
+                            </div>
+                            <div class="input-group">
+                                <p>Email</p>
+                                <input type="email" placeholder="example@example.com">
+                            </div>
+                            <div class="input-group">
+                                <p>Email Confirmation</p>
+                                <input type="email" placeholder="example@example.com">
+                            </div>
+                            <div class="input-group">
+                                <p>Password</p>
+                                <input type="password" placeholder="************">
+                            </div>
+                            <div class="input-group firstname">
+                                <p>First Name</p>
+                                <input type="text" placeholder="Ghulam">
+                            </div>
+                            <div class="input-group firstname">
+                                <p>Last Name</p>
+                                <input type="text" placeholder="Murtaza">
+                            </div>
+                            <div class="input-group">
+                                <p>Mobile Phone</p>
+                                <input type="number" placeholder="0452726888">
+                            </div>
+                            <div class="input-group postal-code">
+                                <p>Postal Code</p>
+                                <input type="number" placeholder="0452">
+                            </div>
+                            <div class="input-group ">
+                                <p>Country</p>
+                                <select name="country" id="country">
+                                    <option value="Australia">Australia</option>
+                                    <option value="Nea Zealand">Nea Zealand</option>
+                                </select>
+                            </div>
+                            <div class="input-group school">
+                                <p>School</p>
+                                <input type="text" placeholder="School">
+                            </div>
+                        </div>
+                        <div class="image-section"><img src="../images/Group 50.png" alt=""></div>
+                    </div>
+                    <div class="after-form">
+                        <p>In a few words, give us a reason for why people need to support youIn a few words, give us a
+                            reason for why people need to support you</p>
+                        <h3>Examples</h3>
+                        <ul>
+                            <li>Your support will help provide food for homeless people</li>
+                            <li>Your support will help loving home for abandoned animals</li>
+                            <li>Your support will provide free education to girls in Uganda Your support will help
+                                provide education for girls in Uganda</li>
+                        </ul>
+                        <label for="freeform">Your Support Will ... (Finish The Sentence – 150 Characters Max)
+                        </label>
+                        <br>
+                        <textarea id="freeform" name="freeform" rows="12" placeholder="Type message here..."></textarea>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="after-steps">
+                <h3>HOW TO GET STARTED</h3>
+                <h2>Get donations for your cause</h2>
+                <img src="../images/Group 52.png" alt="">
+                <div class="steps">
+                    <div class="inner-steps">
+                        <div><img src="../images/Group 54.png" alt=""></div>
+                        <div class="steps-style">
+                            <p class="p1">Sign up your cause: every cause is welcome!</p>
+                            <p>You can sign up your children's school, your local church, even your own personal
+                                challenge or your favourite community group. Every cause is a good cause</p>
+                        </div>
+                    </div>
+                    <div class="inner-steps">
+                        <div><img src="../images/Group 55.png" alt=""></div>
+                        <div class="steps-style">
+                            <p class="p1">Get donations through online shopping.</p>
+                            <p>Invite people to join easy fundraising and support your cause. They can then shop online
+                                with more than 7,000 brands which will donate part of their total spend to your cause as
+                                a thank you for shopping with them.</p>
+                        </div>
+                    </div>
+                    <div class="inner-steps">
+                        <div><img src="../images/Group 56.png" alt=""></div>
+                        <div class="steps-style">
+                            <p class="p1">Raise even more.</p>
+                            <p>Access your dashboard to check how many supporters and donations your cause gets. Boost
+                                your fundraising through our browser extension and app.</p>
+                            <button class="submit-button">Raise your Cause</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="faq-with-head">
+        <div class="faq-header">Frequently Asked Questions</div>
+        <div class="faq-section">
+           
+            <div class="faq-left">
+                
+
+                <div class="faq-content">
+                    <div class="faq-question">
+                        <input id="q1" type="checkbox" class="panel">
+                        <div class="plus">+</div>
+                        <label for="q1" class="panel-title">Who can use Shopnate?</label>
+                        <div class="panel-content">Absolutely any good cause can use Shopnate to raise funds. We're currently helping more than 1,900 good causes of all sizes to make a difference.
+
+                        </div>
+                    </div>
+
+                    <div class="faq-question">
+                        <input id="q2" type="checkbox" class="panel">
+                        <div class="plus">+</div>
+                        <label for="q2" class="panel-title">How are you donations Paid?</label>
+                        <div class="panel-content">Once your total reaches the $10 threshold, Shopnate will send you all the donations raised by everyone supporting your cause, every three months. The donations are sent directly into your bank account. Shopnate does not charge anything for this. If your cause hasn't raised over the $10 threshold in the previous three months, the amount automatically rolls into the next payment instead
+
+                        </div>
+                    </div>
+
+                    <div class="faq-question">
+                        <input id="q3" type="checkbox" class="panel">
+                        <div class="plus">+</div>
+                        <label for="q3" class="panel-title">Is Shopnate really free?</label>
+                        <div class="panel-content">Yes. 100%. Shopnate is 100% FREE to use for both causes and their supporters.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-right">
+                <img src="../images/illustration 1.png" alt="img">
+            </div>
+        </div>
+        </div>
+        <div class="bottom-section">
+            <h3>Causes</h3>
+                <h2>Thousand of Australians Have Already Spent More Than $3 Millions</h2>
+            <div class="inner-bottom">
+                
+                <div class="bottom-section-img">
+                    <img src="../images/Mask group (4).png" alt="">
+                </div>
+                <div class="text-part">
+                    <div class="textpart-text">
+                        <p>As Australia's leading shopping & fundraising platform we are partnering with more causes every day. See which causes are already on board!</p>
+                    </div>
+                    <div>
+                        <button class="submit-button">Check out All Causes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+
+    function handleButtonClick(button) {
+        // Reset background color and border color of all buttons
+        document.querySelectorAll('.custom-button').forEach(btn => {
+            btn.style.backgroundColor = '#FDE60C';
+            btn.style.borderColor = '#FDE60C';
+        });
+
+        // Change background color and border color of the clicked button
+        button.style.backgroundColor = 'white';
+        button.style.borderColor = '#FFB701';
+        if (button.textContent === 'Personal Fundraising') {
+            document.querySelector('.scrolling-section').innerHTML = `
+            <div class="arrow-container">
+                            <div class="arrow" id="leftArrow">&lt;</div>
+                        </div>
+                        <div class="scroll-container" id="scrollContainer">
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/kisspng-logo-brand-camps-international-malawi-ecuador-5b58b8f38a0720 1.png"
+                                        alt="Item Image">
+                                </div>
+                                <p class="item-text">Campus
+                                    International</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Mask group (2).png"alt="Item Image">
+                                </div>
+                                <p class="item-text">Personal 
+                                    Challenge</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Mask group (3).png"alt="Item Image">
+                                </div>
+                                <p class="item-text">  Volunteer 
+                                    Work</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/saving_towards_uni.jpeg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Saving for Education
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/friend_or_relative_in_need.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Personal 
+                                    Challenge</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/World_Challenge_Logo_V3_Square.png"alt="Item Image">
+                                </div>
+                                <p class="item-text">World Challenge
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Default_RA_Pic1_Retirement.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Pension Account
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Antipodeans_logo_V2.png"alt="Item Image">
+                                </div>
+                                <p class="item-text">Antipodeans
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="right-arrow-container">
+                            <div class="arrow" id="rightArrow">&gt;</div>
+                        </div>`;
+            attachEventListeners();
+        }
+        else if (button.textContent === 'Charity & NFPs') {
+            document.querySelector('.scrolling-section').innerHTML = `
+            <div class="arrow-container">
+                            <div class="arrow" id="leftArrow">&lt;</div>
+                        </div>
+                        <div class="scroll-container" id="scrollContainer">
+                            <div class="scroll-item2">
+                                <div class="image-container">
+                                    <img src="../images/Default_RA_Charity_NFP_Pic4.jpg"
+                                        alt="Item Image">
+                                </div>
+                                <p class="item-text">Campus
+                                    International</p>
+                            </div>
+                            
+                        </div>
+                        <div class="right-arrow-container">
+                            <div class="arrow" id="rightArrow">&gt;</div>
+                        </div>`;
+            attachEventListeners();
+        }
+        else if (button.textContent === 'Community Fundraising') {
+            document.querySelector('.scrolling-section').innerHTML = `
+            <div class="arrow-container">
+                            <div class="arrow" id="leftArrow">&lt;</div>
+                        </div>
+                        <div class="scroll-container" id="scrollContainer">
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/sports_clubs.jpg"
+                                        alt="Item Image">
+                                </div>
+                                <p class="item-text">Sports clubs
+</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/schools_and_daycare_groups.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Schools, P&Cs and education
+</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/animal_welfare_group.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text"> Animal welfare
+</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Default_RA_Pic4_Environmental_Welfare.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Environmental welfare
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/religious.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Religious
+</p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Default_RA_Pic1_Arts_Culture.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Arts and Culture
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/Default_RA_Pic2_Health.jpg"alt="Item Image">
+                                </div>
+                                <p class="item-text">Health
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/scouts_and_girl_guides.jpg">
+                                </div>
+                                <p class="item-text">Scouts and Girl Guides
+                                </p>
+                            </div>
+                            <div class="scroll-item">
+                                <div class="image-container">
+                                    <img src="../images/social_clubs.jpg">
+                                </div>
+                                <p class="item-text">Social clubs and others
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="right-arrow-container">
+                            <div class="arrow" id="rightArrow">&gt;</div>
+                        </div>`;
+            attachEventListeners();
+        }
+    }
+    document.querySelectorAll('.custom-button').forEach(button => {
+        button.addEventListener('click', function () {
+            handleButtonClick(this);
+        });
+    });
+    function attachEventListeners() {
+        // Attach event listener to each custom button
+        document.querySelectorAll('.custom-button').forEach(button => {
+            button.addEventListener('click', function () {
+                handleButtonClick(this);
+            });
+        });
+
+        // Attach event listener to left arrow
+        document.getElementById('leftArrow').addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: -300, // Adjust as needed
+                behavior: 'smooth'
+            });
+        });
+
+        // Attach event listener to right arrow
+        document.getElementById('rightArrow').addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: 300, // Adjust as needed
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Initially attach event listeners
+    attachEventListeners();
+
+
+
+</script>
+
+</html>

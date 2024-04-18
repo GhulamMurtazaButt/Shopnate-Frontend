@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Shopnate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        main {
+            font-family: 'Poppins';
+        }
+
+        .container {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('../images/Mask group (6).png');
+            background-size: cover;
+            padding: 0 20px;
+        }
+
+        .container p {
+            font-size: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #FFB700;
+            max-width: 80%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+       
+        .text-section{
+            background-color: white;
+            padding: 40px 60px;
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container p {
+                font-size: 20px;
+            }
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+
+        }
+
+
+        .cols-md-3 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 300px;
+    border: 1px solid #e5e5e5;
+    border-radius: 7px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .cols-md-3 img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+    margin-bottom: 15px;
+  }
+
+  .info {
+    margin: 15px 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #352d27;
+  }
+
+  .steps {
+    display: flex;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.last-container {
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.last-container-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.last-container-section h2 {
+    color: black;
+}
+
+.last-container-section p {
+    color: black;
+    padding-bottom: 20px;
+}
+
+.bottom-section-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.bottom-icon {
+    margin-right: 8px;
+}
+
+.bottom-icon img {
+    width: 60px;
+}
+
+.bottom-section-heading {
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+}
+
+.bootom-paragraph {
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .last-container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .bottom-icon img {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bottom-section-heading {
+        font-size: 16px;
+    }
+
+    .bottom-section-item-text {
+        font-size: 14px;
+    }
+
+    .bootom-paragraph {
+        font-size: 12px;
+    }
+    
+}
+@media screen and (min-width: 1280px) {
+.image-class{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
+@media screen and (max-width: 1280px) {
+    
+    .image-class{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    
+    .image-class{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-container {
+            flex-direction: column;
+        }
+} 
+    
+}
+.cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #FFB700;
+            color: #fff;
+            margin-bottom: 10px;
+            text-decoration: none;
+            border-radius: 32px;
+            margin-right: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background-color: #e9ae30;
+        }
+        .button-container {
+            display: flex;
+           
+            
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="container">
+            <p>Get our new web shopping app Easy Fundraiser and raise more</p>
+        </div>
+        <div class="text-section">
+
+            <p>It’s great you want to shop to support Royal Society for the Blind but have you ever forgotten to visit the Shopnate site first?
+                The Easy Fundraiser web app means you will never miss a free donation</p>
+        </div>
+        
+          
+          <div class="steps">
+            <div class="image-class">
+                <div class="cols-md-3">
+                    <img src="https://www.woolworths.com.au/Images/GlobalHeader/icon-wapple-full.png" alt="Woolworths Logo">
+                    <div class="title"> <b>Woolworths Supermarkets</b></div>
+                    <div class="percentage"> 0% per sale to your cause</div>
+                    <p class="info">Effective 5 Mar 20 until further notice Woolworths has challenges meeting all orders due to Coronavirus. They have paused activity with Shopnate to reduce demand. This is a temporary measure and we apologise for any inconvenience. Your cause thanks you for your ongoing support.</p>
+                  </div>
+            </div>
+            <div class="last-container">
+
+                <div class="last-container-section">
+                    <h2>Get our new web shopping app Easy Fundraiser and raise more</h2>
+                    <p>HOW TO GET STARTED</p>
+
+                 
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/icons8-donation-64.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">1. Never miss a free donation again
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/icons8-money-bag-50.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">2. Raise more money</div>
+                            </div>
+                        </div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/icons8-donations-100.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">3. Activate free donations directly on retailers website</div>
+                            </div>
+                        </div>
+                        <div class="bottom-section-item">
+                            <div class="bottom-icon"><img src="../images/icons8-no-ads-66.png" alt="icon"></div>
+                            <div class="bottom-section-item-text">
+                                <div class="bottom-section-heading">4. It’s completely free and there are no annoying ads</div>
+                            </div>
+                        </div>                       
+                       
+                        <div class="button-container">
+                            <a href="https://chrome.google.com/webstore/detail/easyfundraiser/ddnnlfoonlgjjflmlbfopafcdfjigggo" class="cta-btn">Get the Easy Fundraiser</a>
+                            <a href="#" class="cta-btn">
+                                No thanks I don’t want to make it easy continue shopping</a>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+</script>
+
+</html>

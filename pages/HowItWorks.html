@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>How it works</title>
+    <style>
+        main{
+            font-family: 'Poppins';
+        }
+        .first {
+            background-color: #F4EFEF;
+            padding-bottom: 20px;
+        }
+
+        .pageheading {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .pageheading p {
+            text-align: center;
+            color: #FFB701;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .first-section {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+        }
+
+        .button-container {
+            /* display: flex;
+            flex-wrap: nowrap;
+            justify-content: center; */
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+
+        .button {
+            background-color: #FDE60C;
+            border: 2px solid #FDE60C;
+            color: black;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 22px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            align-items: center;
+
+        }
+
+        .right-section-image {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .right-section-image img {
+            width: 360px;
+            height: auto;
+        }
+
+        .right-section-container {
+            background-color: #0F1E35;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+
+        .right-section-container h2 {
+            text-align: center;
+            color: #FFB701;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .right-section-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .right-section-heading {
+            font-weight: 600;
+        }
+
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        .icon img {
+            width: 30px;
+        }
+
+        .heading {
+            padding-right: 280px;
+        }
+
+        .paragraph {
+            font-size: 14px;
+            color: white;
+
+        }
+
+        .left-section-list {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+
+        .left-section-item {
+            display: flex;
+        }
+
+        .third {
+            padding-top: 10px;
+            padding-right: 40px;
+        }
+
+        .last-container {
+            background-color: #B8D9CA;
+            padding: 40px;
+        }
+
+        .last-container-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .last-container-section p {
+            padding-bottom: 20px;
+        }
+
+        .bottom-section-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .bottom-icon {
+            margin-right: 8px;
+        }
+
+        .bottom-icon img {
+            width: 60px;
+        }
+
+        .bottom-section-heading {
+            font-weight: 600;
+            color: black
+        }
+
+        .bootom-paragraph {
+            color: black;
+        }
+
+        .last-container {
+            padding: 80px 20%;
+        }
+        @media screen and (max-width: 280px) {
+            .bottom-icon img {
+    width: 40px;
+}
+        }
+
+        @media screen and (max-width: 768px) {
+            .first-section {
+                flex-direction: column;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .left-section,
+            .right-section {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .heading {
+                padding-right: 0;
+            }
+
+            .right-section-image img {
+                width: 80%;
+            }
+
+            .last-container {
+                padding: 40px 10px;
+            }
+
+            .last-container-section {
+                padding: 0;
+            }
+            .third {
+            padding-right: 0;
+        }
+        }
+
+        @media screen and (max-width: 1050px) {
+            .right-section-image img {
+                width: 80%;
+            }
+            .heading {
+                padding-right:50px;
+            }
+        }
+
+        @media screen and (max-width: 345px) {
+        .button-container{
+            flex-direction: column;
+        }
+        .button{
+            margin-right: 5px;
+        margin-bottom: 10px;
+        }
+        
+        }
+
+        .email img {
+            width: 15px;
+
+        }
+
+        .email a {
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .email a:hover {
+            text-decoration: underline;
+        }
+
+        .emailme a {
+            color: #FFB701;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .emailme a:hover {
+            text-decoration: underline;
+        }
+
+        .register-btn {
+            background-color: #FDE60C;
+            border: #FDE60C;
+            padding: 15px 20px;
+            border-radius: 22px;
+            font-weight: bold;
+        }
+
+        .bold {
+            font-weight: bold;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .right-section-heading p{
+            font-weight: 500;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="first">
+            <div class="pageheading">
+                <p>How it works</p>
+            </div>
+
+            <div class="first-section">
+                <div class="left-section">
+                    <div class="button-container">
+                        <button class="button">Fundraisers</button>
+                        <button class="button">Shoppers</button>
+                        <button class="button">Shops</button>
+                    </div>
+
+                    <div class="heading">
+                        <h1>How it works for charities & other good causes</h1>
+                        <p>Every time anyone shops through Shopnate they collect a free donation for the charity or good
+                            cause they support. What's more is Shopnate provides numerous deals and coupons so the
+                            shoppers
+                            get to save as well. They Shop, They Save, and We Give to your cause. Over 900 Australian
+                            causes
+                            like yours are raising money everyday, simply by encouraging their friends, family,
+                            community
+                            and supporters to buy everything through Shopnate. Why not yours?</p>
+                    </div>
+
+
+                    <div class="third">
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Schools, day-care & playgroups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Australian registered charities & NFPs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Churches & other religious groups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Sports clubs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Animal care groups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Environmental care groups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Individual challengers (eg climbing a mountain)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Youth associations</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Scouts & girl guides</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Social clubs eg arts, chess, dance & music</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="right-section">
+                    <div class="right-section-image">
+                        <img src="../images/Image 1.png" alt="image">
+                    </div>
+
+                    <div class="right-section-container">
+                        <h2>THE BENEFITS</h2>
+                        <div class="right-section-item">
+                            <div class="icon"><img src="../images/icon_shopnate01 1.png" alt="icon"></div>
+                            <div class="right-section-item-text">
+                                <div class="right-section-heading">DONATE</div>
+                                <div class="paragraph">A donation is made to your good cause every time you shop online.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-section-item">
+                            <div class="icon"><img src="../images/icon_shopnate02 1.png" alt="icon"></div>
+                            <div class="right-section-item-text">
+                                <div class="right-section-heading">100% FREE</div>
+                                <div class="paragraph">Shopnate is completely free to use. Good causes are charged no
+                                    money
+                                    for using our service.</div>
+                            </div>
+                        </div>
+                        <div class="right-section-item">
+                            <div class="icon"><img src="../images/icon_shopnate03 1.png" alt="icon"></div>
+                            <div class="right-section-item-text">
+                                <div class="right-section-heading">SIMPLE</div>
+                                <div class="paragraph">Shop at the same stores in the same way, except you raise money
+                                    for a
+                                    good cause.</div>
+                            </div>
+                        </div>
+                        <div class="right-section-item">
+                            <div class="icon"><img src="../images/icon_shopnate04 1.png" alt="icon"></div>
+                            <div class="right-section-item-text">
+                                <div class="right-section-heading">NO. 1</div>
+                                <div class="paragraph">The no.1 site for fundraising via shopping online in Australia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-section-item">
+                            <div class="icon"><img src="../images/icon_shopnate05 1.png" alt="icon"></div>
+                            <div class="right-section-item-text">
+                                <div class="right-section-heading">DO GOOD</div>
+                                <div class="paragraph">If you could give to a cause every time you shop, why wouldn’t
+                                    you?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-section-item">
+                            <div class="icon"><img src="../images/icon_shopnate06 1.png" alt="icon"></div>
+                            <div class="right-section-item-text">
+                                <div class="right-section-heading">100% SECURE</div>
+                                <div class="paragraph">Shopnate and our toolbars are verified and 100% secure?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last-container">
+            <div class="last-container-section">
+                <h2>How to get started raising free funds for your good cause</h2>
+                <p>Getting started is simple.</p>
+                <div>
+                    <div class="bottom-section-item">
+                        <div class="bottom-icon"><img src="../images/Group1.png" alt="icon"></div>
+                        <div class="bottom-section-item-text">
+                            <div class="bottom-section-heading">Register online</div>
+                            <div class="bootom-paragraph">Using our simple online form, it takes less than 5 minutes to
+                                complete.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-section-item">
+                        <div class="bottom-icon"><img src="../images/Group2.png" alt="icon"></div>
+                        <div class="bottom-section-item-text">
+                            <div class="bottom-section-heading">Introduce your organisation, staff and supporters</div>
+                            <div class="bootom-paragraph">Collect the ready to use marketing resources such as our
+                                emails, images and social media assets. Use these to share Shopnate with your staff and
+                                supporters. We will also provide you with a guides, an account manager and emails to
+                                help you spread the word to your supporters so they can donate more to you.</div>
+                        </div>
+                    </div>
+                    <div class="bottom-section-item">
+                        <div class="bottom-icon"><img src="../images/Group3.png" alt="icon"></div>
+                        <div class="bottom-section-item-text">
+                            <div class="bottom-section-heading">Raise free donations.</div>
+                            <div class="bootom-paragraph">We pay you monthly with any funds your supporters have raised
+                                for your good cause. You can also log in to your admin section at any time and see the
+                                amounts raised. <br> If you have any further questions on how Shopnate can work for your
+                                good cause, email us at</div>
+
+                            <div class="email"><a href="mailto:admin@shopnate.com.au">admin@shopnate.com.au</a> <img
+                                    src="../images/Vector (1).png" alt="icon"></div>
+                            <br>
+                            <button class="register-btn">Register my Cause</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+
+    function handleButtonClick(button) {
+        // Reset background color and border color of all buttons
+        document.querySelectorAll('.button').forEach(btn => {
+            btn.style.backgroundColor = '#FDE60C';
+            btn.style.borderColor = '#FDE60C';
+        });
+
+        // Change background color and border color of the clicked button
+        button.style.backgroundColor = '#F4EFEF';
+        button.style.borderColor = '#FFB701';
+        if (button.textContent === 'Fundraisers') {
+            document.querySelector('.heading').innerHTML = ` <h1>How it works for charities & other good causes</h1>
+                        <p>Every time anyone shops through Shopnate they collect a free donation for the charity or good
+                            cause they support. What's more is Shopnate provides numerous deals and coupons so the
+                            shoppers
+                            get to save as well. They Shop, They Save, and We Give to your cause. Over 900 Australian
+                            causes
+                            like yours are raising money everyday, simply by encouraging their friends, family,
+                            community
+                            and supporters to buy everything through Shopnate. Why not yours?</p>`;
+            document.querySelector('.third').innerHTML = `
+                <div class="third">
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Schools, day-care & playgroups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Australian registered charities & NFPs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Churches & other religious groups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Sports clubs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Animal care groups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Environmental care groups</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Individual challengers (eg climbing a mountain)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Youth associations</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Scouts & girl guides</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Social clubs eg arts, chess, dance & music</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                `;
+        } if (button.textContent === 'Shoppers') {
+            document.querySelector('.heading').innerHTML = ` <h1>How it works for shoppers</h1>
+                      
+            <p>Imagine being able to make a donation to your favourite good cause every time you shop online and at no extra cost to you. Well that’s exactly how Shopnate works.</p>
+    <p class="bold">How can I help my favourite cause just by shopping online?</p>
+    <p>Shopnate works with hundreds of big name Australian and international online retailers. They have all agreed to donate a commission on every online sale to a good cause of your choice. This commission is already included in the price of what you’re buying. This means you can support your favourite cause, at no extra cost to you.</p>
+    <p class="bold">It’s not too good to be true</p>
+    <p>Every popular comparison website uses a similar model. With Shopnate you are still shopping at exactly the same stores with the same price. It's just that with Shopnate a percentage of everything you spend goes to a good cause of your choice.</p>
+    <p class="bold"> Why would you just shop when you can Shopnate? </p>
+    <p>It’s simple and it’s free to get started</p>`;
+            document.querySelector('.third').innerHTML = `
+                    <div class="third">
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Click to join Shopnate.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Select your favourite cause or support our good cause of the month.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading emailme">If your favourite cause isn’t yet listed on Shopnate, tell them about it or contact me at <a href="mailto:admin@shopnate.com.au">admin@shopnate.com.au</a>
+<br>It’s free for them too.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading">Visit Shopnate every time you go to shop online and raising extra funds for your favourite cause for free. It’s that simple.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-section-list">
+                            <div class="left-section-item">
+                                <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                <div class="right-section-item-text">
+                                    <div class="right-section-heading emailme">If you have any questions please use our online help or contact me at <br><a href="mailto:admin@shopnate.com.au">admin@shopnate.com.au
+</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+`;
+        } else if (button.textContent === 'Shops') {
+            document.querySelector('.heading').innerHTML = ` <h1>How it works for retailers</h1>
+                      
+                      <p>Shopnate is the leading online fundraising platform for Australian charities and their supporters. It allows anyone to raise money for their favourite good cause just by shopping online.<br>
+                        Hundreds of stores are already signed up to donate a percentage of what our users spend with them to a good cause.<br>
+                        You can join the hundreds of retailers already helping Australian charities.<br>
+                        <p class="bold">So why would you want to be listed as a retailer on Shopnate?</p>
+                        There are 3 good reasons to join Shopnate as a retailer
+                        </p>`;
+                      document.querySelector('.third').innerHTML = `
+                              <div class="third">
+                                  <div class="left-section-list">
+                                      <div class="left-section-item">
+                                          <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                          <div class="right-section-item-text">
+                                              <div class="right-section-heading">You get new customers<br>
+                                                <p>As well as having your store listed on our website we also promote retailers through our emails and social channels.<br>
+                                                    We also provide charities with marketing tools which can increase your stores exposure.</p></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="left-section-list">
+                                      <div class="left-section-item">
+                                          <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                          <div class="right-section-item-text">
+                                              <div class="right-section-heading">Increase your customer loyalty
+                                                <p>Our shoppers love to shop with a retailer that is associated with a charitable cause. They will return to shop with you knowing that you are donating a small percentage to their favourite good cause.</p></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="left-section-list">
+                                      <div class="left-section-item">
+                                          <div class="icon"><img src="../images/Object.png" alt="icon"></div>
+                                          <div class="right-section-item-text">
+                                              <div class="right-section-heading emailme">Help us to reach our goal of raising $1 million dollars for Australian charities<br>
+                                                <p>The more quality retailers we have on board at Shopnate the quicker we can reach our goal of raising $1 million for Australian charities.<br>
+                                                    How do I get my store listed on Shopnate?<br>
+                                                    You can join us and become a Shopnate retailer through your existing affiliate programme. We are signed up with all the leading affiliate networks in Australia - if you have a programme please make sure you have approved us.<br>
+                                                    If you are not currently joined to an affiliate network send me an email at
+                                                    </p><a href="mailto:admin@shopnate.com.au">admin@shopnate.com.au</a>
+          <br><p>and I’ll point you in the right direction.</p></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+          
+          `;
+        }
+    }
+
+    // Add event listeners to all buttons
+    document.querySelectorAll('.button').forEach(button => {
+        button.addEventListener('click', function () {
+            handleButtonClick(this);
+        });
+    });
+</script>
+
+</html>

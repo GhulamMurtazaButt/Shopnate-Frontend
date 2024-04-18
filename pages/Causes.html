@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>How it works</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        main {
+            font-family: 'Poppins';
+        }
+        .container {
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url('../images/Mask group (6).png');
+            background-size: cover;
+            padding: 0 20px;
+        }
+
+        .container p {
+            font-size: 45px;
+            text-align: center;
+            font-weight: 600;
+            color: #FFB700;
+            max-width: 80%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .second-section {
+            padding-top: 60px;
+            background-color: #F4EFEF;
+            background-image: url('../images/Vector\ \(8\).png');
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+
+        .search-field {
+            display: flex;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+
+        .search-field input[type="text"] {
+            width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 22px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-field button {
+            background-color: #E98C00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 22px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /* Adjust the minimum width as needed */
+            grid-gap: 20px;
+            justify-content: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-item img {
+            max-width: 50%;
+            height: auto;
+        }
+
+
+
+
+        .faq-section {
+            background-color: white;
+            display: flex;
+            padding: 50px;
+
+        }
+
+        .faq-with-head {
+            background-color: white;
+            padding-top: 40px;
+
+        }
+
+        .faq-header {
+            text-align: center;
+            font-size: 42px;
+            padding: 24px;
+        }
+
+        .faq-content {
+            margin: 0 auto;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            border-bottom: 0.5px solid black;
+
+
+        }
+
+        .panel-title {
+            font-size: 20px;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 5px 10px 0 60px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .panel-content {
+            font-size: 16px;
+            padding: 0px 14px;
+            margin: 0 40px;
+            height: 0;
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+            opacity: 0;
+            -webkit-transition: .4s ease;
+            -moz-transition: .4s ease;
+            -o-transition: .4s ease;
+            transition: .4s ease;
+            color: black;
+        }
+
+        .panel:checked~.panel-content {
+            height: auto;
+            opacity: 1;
+            padding: 14px;
+        }
+
+        .plus {
+            position: absolute;
+            margin-left: 20px;
+            margin-top: 4px;
+            z-index: 5;
+            font-size: 42px;
+            line-height: 100%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            -webkit-transition: .2s ease;
+            -moz-transition: .2s ease;
+            -o-transition: .2s ease;
+            transition: .2s ease;
+        }
+
+        .panel:checked~.plus {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .panel {
+            display: none;
+        }
+
+        .faq-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .faq-left {
+
+            width: 50%;
+        }
+
+        .faq-right img {
+            width: 500px;
+        }
+
+        @media only screen and (max-width: 940px) {
+            .faq-right img {
+                width: 400px;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            .faq-right img {
+                width: 350px;
+            }
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            .faq-section {
+                flex-direction: column-reverse;
+                padding: 20px;
+            }
+
+            .faq-left,
+            .faq-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .faq-right img {
+                width: 350px;
+                height: auto;
+            }
+
+
+        }
+        @media only screen and (max-width: 1200px) {
+    .container p {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .grid-item img {
+        max-width: 40%;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .faq-right img {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .faq-right img {
+        width: 350px;
+    }
+
+    .search-field input[type="text"] {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+                height: auto;
+                padding: 60px 20px;
+            }
+
+            .container p {
+                font-size: 18px;
+                text-align: center;
+            }
+
+    .search-field {
+        width: 80%;
+        align-items: center;
+    }
+
+    .search-field input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .grid-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .grid-item {
+        padding: 15px;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+    }
+
+    .faq-section {
+        padding: 20px;
+    }
+
+    .faq-left,
+    .faq-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .faq-right img {
+        width: 100%;
+        height: auto;
+    }
+
+    .panel-title {
+        font-size: 16px;
+    }
+
+    .panel-content {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    .faq-header {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .faq-header {
+        font-size: 24px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="headerContainer"></div>
+    </header>
+    <main>
+        <div class="container">
+            <p>Search our list of charities and good causes to choose the one you want to support</p>
+        </div>
+        <div class="second-section">
+            <div class="search-field">
+                <input type="text" placeholder="Search for cause">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item"><img src="../images/image_2014_08_25_01_47_03 1.png" alt="Logo 1"></div>
+                <div class="grid-item"><img src="../images/image_2014_09_10_01_54_51 1.png" alt="Logo 2"></div>
+                <div class="grid-item"><img src="../images/d41eb4a1d95e5bf2e15d3a9522146cd4 1.png" alt="Logo 3"></div>
+                <div class="grid-item"><img src="../images/c558c7a098261fa77236b8293271e5c5 1.png" alt="Logo 1"></div>
+                <div class="grid-item"><img src="../images/9900bf4176a072703da4d428c6fdfb55 1.png" alt="Logo 2"></div>
+                <div class="grid-item"><img src="../images/c79597e43a588b5eb157baac701f6b7c 1.png" alt="Logo 3"></div>
+                <div class="grid-item"><img src="../images/a1982716b763e762cb2f0fb756e2575c 1.png" alt="Logo 3"></div>
+                <div class="grid-item"><img src="../images/97619704ab9405d573292a925a09e2fd 1.png" alt="Logo 3"></div>
+                <div class="grid-item"><img src="../images/72efbce6b92efe82d16f2a813e4c7429 1.png" alt="Logo 3"></div>
+
+            </div>
+        </div>
+        <div class="faq-with-head">
+            <div class="faq-header">Frequently Asked Questions</div>
+            <div class="faq-section">
+
+                <div class="faq-left">
+
+
+                    <div class="faq-content">
+                        <div class="faq-question">
+                            <input id="q1" type="checkbox" class="panel">
+                            <div class="plus">+</div>
+                            <label for="q1" class="panel-title">How does shopnate work?</label>
+                            <div class="panel-content">Start your online shopping at Shopnate.com.au then shop as normal with any of our partners. Once you make a purchase, our partner will give a percentage of your purchase as a donation to the cause you nominate.</div>
+                        </div>
+
+                        <div class="faq-question">
+                            <input id="q2" type="checkbox" class="panel">
+                            <div class="plus">+</div>
+                            <label for="q2" class="panel-title">Is shopnate use to free?</label>
+                            <div class="panel-content">Yes. 100% free! We know it is important to be transparent so you can have confidence in us, so if you have any questions.
+                            </div>
+                        </div>
+
+                        <div class="faq-question">
+                            <input id="q3" type="checkbox" class="panel">
+                            <div class="plus">+</div>
+                            <label for="q3" class="panel-title">How long does it take for my cause to recieve the donations I raised?</label>
+                            <div class="panel-content">When you shop online, your donation is allocated to the cause you support. Every three months we send your cause the donations that have been raised in that time, as long as $10 or more has been raised. If the $10 threshold hasn't been reached, the donation simply rolls over to the next payment.
+
+
+                            </div>
+                        </div>
+                        <div class="faq-question">
+                            <input id="q3" type="checkbox" class="panel">
+                            <div class="plus">+</div>
+                            <label for="q3" class="panel-title">Do i need to shop via shopnate.com.au to raise the donations?</label>
+                            <div class="panel-content">Yes. In order to raise a donation for the cause you care about, your online order must begin on Shopnate.com.au - that way, the brand will know who to donate to. You can make things easier for yourself by installing the Shopnate Chrome Extension which automatically detects when you visit a brand's site, so you don't have to remember to visit our website beforehand.
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-right">
+                    <img src="../images/illustration 1.png" alt="img">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footerContainer"></div>
+    </footer>
+
+</body>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('headerContainer').innerHTML = html);
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footerContainer').innerHTML = html);
+</script>
+
+</html>
